@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANOO.IO | The Octet Draft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-carbon: #0A0D14;
+            --gunmetal: #1E232B;
+            --adamas-cyan: #00E5FF;
+            --forge-copper: #B87333;
+            --alabaster: #F4F5F8;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--deep-carbon);
+            color: var(--alabaster);
+            overflow-x: hidden;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+        .glow-border {
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+        /* Subtle grid background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+        /* Terminal Blinking Cursor */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-grid min-h-screen flex flex-col items-center justify-start relative selection:bg-[#00E5FF] selection:text-[#0A0D14]">
+
+    <!-- Decorative Top Line -->
+    <div class="w-full h-1 bg-gradient-to-r from-[--deep-carbon] via-[--adamas-cyan] to-[--deep-carbon] opacity-50 absolute top-0 left-0"></div>
+
+    <!-- Header -->
+    <header class="w-full max-w-5xl mx-auto py-8 px-6 flex justify-between items-center border-b border-[--gunmetal]">
+        <div class="text-2xl font-extrabold tracking-[0.2em] text-[--alabaster]">
+            M A N O O <span class="text-[--adamas-cyan]">. I O</span>
+        </div>
+        <div class="font-mono text-xs text-gray-500 uppercase tracking-widest">
+            SYS.STATUS: <span class="text-green-500 glow-text">ONLINE</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-16">
+        
+        <!-- Left Column: The Crucible -->
+        <div class="flex-1 space-y-10">
+            <div>
+                <h2 class="text-[--forge-copper] font-mono text-sm uppercase tracking-widest mb-2">Public Bounty</h2>
+                <h1 class="text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                    THE OCTET DRAFT:<br>
+                    <span class="text-[--adamas-cyan]">THE 3960-HOUR CRUCIBLE</span>
+                </h1>
+                
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 border-l-2 border-[--gunmetal] pl-4 py-2 font-mono text-sm text-gray-400">
+                    <div><strong class="text-[--alabaster]">Entity:</strong> Betis S.R.L.<br>(Manoo Operational Node)</div>
+                    <div><strong class="text-[--alabaster]">Location:</strong> Remote / Switzerland</div>
+                    <div><strong class="text-[--alabaster]">Mission:</strong> 165 Days<br>(3,960 Hrs Absolute Focus)</div>
+                </div>
+            </div>
+
+            <div class="space-y-6 text-gray-300 leading-relaxed text-lg font-light">
+                <p>You are invited to secure your place in what you will find to be a highly structured Web3 lean manufacturing ecosystem. We are initiating a 3,960-hour thermodynamic sprint to build the operational Proof of Concept for a decentralized industrial engine.</p>
+                <p>If you are humble, confident in your craft, and driven by systemic excellence, solve the entry puzzle. Only <strong class="text-[--alabaster] font-semibold">27 elite operators</strong> will be selected for the vanguard.</p>
+            </div>
+
+            <!-- Breakdown -->
+            <div class="bg-[--gunmetal] bg-opacity-30 border border-gray-800 p-8 rounded-sm">
+                <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-2">STRUCTURAL BREAKDOWN</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <span class="text-[--forge-copper] font-mono mr-4 mt-1">01.</span>
+                        <div>
+                            <strong class="text-[--alabaster] block text-lg mb-1">19 Vanguard Reserves</strong>
+                            <span class="text-gray-400 text-sm">The tactical priming engine. You are the structural reinforcement maintaining the thermodynamic pressure, ready to seamlessly rotate in to ensure the protocol's continuous execution.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[--forge-copper] font-mono mr-4 mt-1">02.</span>
+                        <div>
+                            <strong class="text-[--alabaster] block text-lg mb-1">6 Pillars</strong>
+                            <span class="text-gray-400 text-sm">The elite architects executing the physical, legal, and cryptographic code on the front lines.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-[--forge-copper] font-mono mr-4 mt-1">03.</span>
+                        <div>
+                            <strong class="text-[--alabaster] block text-lg mb-1">3 Operational Leads (Betis C-Suite)</strong>
+                            <span class="text-gray-400 text-sm">The tactical directors orchestrating the Proof of Concept and guiding the Betis S.R.L. node.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column: Rules & Gateway -->
+        <div class="flex-1 space-y-10">
+            
+            <!-- Rules of Engagement -->
+            <div>
+                <h3 class="text-xl font-bold mb-6 text-[--adamas-cyan] flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    RULES OF ENGAGEMENT
+                </h3>
+                <div class="space-y-6 text-sm text-gray-300">
+                    <p><strong class="text-white block mb-1">1. Output over Pedigree:</strong> We do not care where you worked or what your title was. We care how you process pressure and deliver precision in 33-hour cycles.</p>
+                    <p><strong class="text-white block mb-1">2. The Oxygen:</strong> Base funding of 330 nM° (110 CHF) is paid per 33-hour cycle, strictly upon Zero-Muda (waste-free) delivery.</p>
+                    <p><strong class="text-white block mb-1">3. The Tollgates:</strong> Merit-based progression. 132,000 nM° in discretionary bonus pools are reserved strictly for the top-performing nodes who beat the clock and elevate the team.</p>
+                    <p><strong class="text-white block mb-1">4. The Assimilation:</strong> Survive the 3,960 hours and successfully deploy the Proof of Concept. The starting Pillars and Leads will receive a foundational offer: <span class="text-[--forge-copper] font-mono block mt-1">330,000 nM°/year + up to 1.1% Class B Equity</span></p>
+                </div>
+            </div>
+
+            <!-- Law of Thermal Rotation -->
+            <div class="bg-gray-900 border-l-4 border-[--forge-copper] p-6 text-sm italic text-gray-400">
+                <strong class="text-white not-italic block mb-2">The Law of Thermal Rotation:</strong>
+                Should your efficiency drop against the 8 systemic KPIs during the sprint, you will respectfully rotate into the Vanguard Reserve, allowing fresh momentum to take the lead. In this ecosystem, there is no failure, only a continuous re-alignment of talent to ensure the system's survival.
+            </div>
+
+            <p class="text-sm text-gray-400">If you seek the comfort of a standard corporate hierarchy, this path is not for you. If you want to capture the perpetual yield of the assets you forge, operate under a noble, fact-based meritocracy, and engineer the future of industrial logistics, enter the Draft.</p>
+        </div>
+    </main>
+
+    <!-- Terminal Section (The Gateway) -->
+    <section class="w-full bg-[#05070A] border-t border-[--gunmetal] py-16 px-6 mt-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-mono text-[--adamas-cyan] text-xl mb-6">>> DISCLOSURE & ENTRY PARAMETERS (THE GATEWAY)</h2>
+            <p class="font-mono text-xs text-gray-500 mb-8 max-w-2xl">Access to the terminal requires parsing the following structural physics. Ignorance of the protocol's mechanics is an automatic disqualification.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 font-mono text-xs text-gray-400">
+                <div class="border border-gray-800 p-5 rounded-sm bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
+                    <span class="text-white font-bold block mb-2">I. FINANCIAL</span>
+                    Dual-token hydrostatic model. The $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. Extraction yield of a 33-hour sprint under a strict 33/66/1 routing ratio required.
+                </div>
+                <div class="border border-gray-800 p-5 rounded-sm bg-black hover:border-[--forge-copper] transition-colors duration-300">
+                    <span class="text-white font-bold block mb-2">II. LEGAL</span>
+                    Class B shares represent economic rights based on absolute Class Asymmetry. Zero veto power. Drag-Along clause ensures frictionless exits. Breach of 8 KPIs triggers a Punitive Call Option.
+                </div>
+                <div class="border border-gray-800 p-5 rounded-sm bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
+                    <span class="text-white font-bold block mb-2">III. TECH</span>
+                    The Adamas Hash is blind without legal execution. IP transfer requires a Ricardian contract exchanging Fiat & Utility simultaneously.
+                    <code class="block mt-2 text-[#00E5FF] opacity-70 break-words">[Ricardian.Execute: if(Adamas_Validated) { route(33%, creator, $nM); ... }]</code>
+                </div>
+            </div>
+
+            <!-- Interactive Fake Terminal -->
+            <div class="w-full max-w-2xl mx-auto bg-black border border-[--gunmetal] rounded-md overflow-hidden glow-border shadow-2xl">
+                <div class="bg-[--gunmetal] px-4 py-2 flex items-center justify-between">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="font-mono text-xs text-gray-400">manoo.io/draft_terminal</div>
+                </div>
+                <div class="p-6 font-mono text-sm">
+                    <p class="text-gray-500 mb-2">Initializing Octet Draft Sequence...</p>
+                    <p class="text-gray-500 mb-2">Loading physics engine... <span class="text-green-500">OK</span></p>
+                    <p class="text-gray-500 mb-4">Verifying Ricardian protocols... <span class="text-green-500">OK</span></p>
+                    <div class="text-[--adamas-cyan] mb-4 glow-text">
+                        Awaiting mathematical validation to unlock access.
+                    </div>
+                    <div class="flex items-center text-white">
+                        <span class="mr-2 text-[--forge-copper]">root@manoo:~$</span> 
+                        <input type="text" placeholder="Prove your competency..." class="bg-transparent border-none outline-none text-white w-full font-mono placeholder-gray-700 focus:ring-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
