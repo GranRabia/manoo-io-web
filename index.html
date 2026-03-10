@@ -28,7 +28,7 @@
         /* Efectos de Lujo */
         .glow-cyan { text-shadow: 0 0 15px rgba(0, 229, 255, 0.6); }
         .glow-copper { text-shadow: 0 0 15px rgba(184, 115, 51, 0.6); }
-        .glow-border { box-shadow: 0 0 25px rgba(0, 229, 255, 0.15); }
+        .glow-border { box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); }
         .glass-panel {
             background: rgba(10, 13, 20, 0.7);
             backdrop-filter: blur(16px);
@@ -157,20 +157,24 @@
 <body class="bg-grid">
 
     <!-- HEADER / NAVEGACIÓN -->
-    <header class="fixed w-full top-0 z-50 glass-panel py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="flex items-center gap-4 cursor-pointer" onclick="navigate('home')">
-            <div class="w-8 h-8 rounded-full border border-[--adamas-cyan] flex items-center justify-center overflow-hidden">
-                <img src="Firefly_GeminiFlash_A%20high-end%20luxury%20brand%20identity.jpg" class="w-full h-full object-cover opacity-80" alt="Manoo Logo">
+    <header class="fixed w-full top-0 z-50 glass-panel py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-900">
+        <div class="flex items-center gap-4 cursor-pointer group" onclick="navigate('home')">
+            <!-- LOGO VECTORIAL (Cero Muda) -->
+            <div class="w-9 h-9 rounded-sm border border-[--adamas-cyan] flex items-center justify-center bg-[#0A0D14] glow-border relative overflow-hidden transition-all duration-300 group-hover:border-white">
+                <div class="absolute inset-0 bg-[--adamas-cyan] opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                <svg class="w-5 h-5 text-[--adamas-cyan] transition-colors duration-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                </svg>
             </div>
-            <div class="text-xl font-extrabold tracking-[0.2em] text-[--alabaster]">
-                M A N O O <span class="text-[--adamas-cyan]">. I O</span>
+            <div class="text-xl md:text-2xl font-extrabold tracking-[0.2em] text-[--alabaster]">
+                M A N O O <span class="text-[--adamas-cyan] glow-cyan">. I O</span>
             </div>
         </div>
         
         <nav class="hidden md:flex gap-8 font-mono text-xs tracking-widest uppercase">
             <a href="#home" class="nav-link active-link" onclick="navigate('home')">1. Draft</a>
             <a href="#vision" class="nav-link" onclick="navigate('vision')">2. Vision</a>
-            <a href="#investors" class="nav-link" onclick="navigate('investors')">3. Investors</a>
+            <a href="#investors" class="nav-link" onclick="navigate('investors')">3. Pre-Sale</a>
             <a href="#chronometer" class="nav-link" onclick="navigate('chronometer')">4. Execute</a>
         </nav>
     </header>
@@ -215,7 +219,7 @@
                 </div>
             </div>
             <div class="mt-12 text-center">
-                <button onclick="navigate('chronometer')" class="border border-[--adamas-cyan] text-[--adamas-cyan] px-8 py-3 font-mono text-xs tracking-widest uppercase hover:bg-[--adamas-cyan] hover:text-black transition-colors">
+                <button onclick="navigate('chronometer')" class="border border-[--adamas-cyan] text-[--adamas-cyan] px-8 py-3 font-mono text-xs tracking-widest uppercase hover:bg-[--adamas-cyan] hover:text-black transition-colors glow-border">
                     Access The Gateway
                 </button>
             </div>
@@ -260,16 +264,16 @@
     </section>
 
     <!-- ==============================================
-         SECCIÓN 3: INVESTORS ("LA MIEL")
+         SECCIÓN 3: PRE-SALE / INVESTORS ("LA MIEL")
          ============================================== -->
     <section id="investors" class="page-section">
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">The Financial Engine</h2>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-12">SOVEREIGNTY & <br>NON-DILUTIVE SCALABILITY.</h1>
+            <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">Early Access Offering</h2>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-12">SECURE YOUR ASYMMETRY.<br>BEFORE THE HARD PEG.</h1>
 
-            <div class="glass-panel p-8 md:p-10 mb-12 border-l-4 border-[--forge-copper]">
+            <div class="glass-panel p-8 md:p-10 mb-12 border-l-4 border-[--adamas-cyan]">
                 <p class="text-lg md:text-xl text-gray-300 font-light italic leading-relaxed">
-                    "We build wealth, not mutinies. The architectural integrity of Manoo S.R.L. guarantees absolute founder control while offering unprecedented, non-dilutive exit multiples through Disposable Nodes."
+                    "Wealth is generated in the asymmetry of early access. The Manoo network enforces a strict 33-hour halving cycle leading up to the global D-33h deployment. Secure your execution packages while the arbitrage exists."
                 </p>
             </div>
 
@@ -278,77 +282,79 @@
                     <!-- Point 1 -->
                     <div class="p-6 border border-gray-800 bg-black hover:border-[--forge-copper] transition-colors duration-300">
                         <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
-                            <span class="text-[--forge-copper]">01.</span> The Yield (Class B Equity)
+                            <span class="text-[--forge-copper]">01.</span> Betis Exclusive Access
                         </h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Class B shares represent strict economic rights based on absolute Class Asymmetry. Zero veto power. Designed to reward tactical operators and early backers with up to 9.9% of the pool, capturing the perpetual yield of the 33/66/1 Siphon without threatening Founder Sovereignty (Class A).</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">Acquire a foundational AI Node before the global rollout. Securing a Betis Node grants you perpetual 33% yield routing on all structured IP passing through your vertical. <br><span class="text-[--forge-copper] font-bold mt-2 inline-block">Allocation requirement: 3,300 nM°</span></p>
                     </div>
                     
                     <!-- Point 2 -->
                     <div class="p-6 border border-gray-800 bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
                         <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
-                            <span class="text-[--adamas-cyan]">02.</span> Disposable Nodes (M&A Strategy)
+                            <span class="text-[--adamas-cyan]">02.</span> 3.3 Min Execution Packages
                         </h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Manoo scales without diluting its Cap Table. We build specific AI verticals ("Betis Nodes"), prove their traction via the 8 KPIs (e.g., the 2026 Global Event), and sell or license the exclusive Node to global corporations. Massive liquid capital injections for the Srl, zero equity dilution.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">Pre-purchase high-density algorithmic compute time for the Manoovers ecosystem. Secure your execution packages today at a severe discount before the live environment locks the standard rate. <br><span class="text-[--adamas-cyan] font-bold mt-2 inline-block">Allocation requirement: 330 nM°</span></p>
                     </div>
 
                     <!-- Point 3 -->
                     <div class="p-6 border border-gray-800 bg-black hover:border-green-500 transition-colors duration-300">
                         <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
-                            <span class="text-green-500">03.</span> Trojan Horses (Physical Collateral)
+                            <span class="text-green-500">03.</span> The Yield Arbitrage
                         </h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Bypassing the 100M CHF FINIA Fintech limit. Our IP is physically anchored in Modular EVs, Drones, and Grow-Boxes. We are not a speculative crypto token; we are a Swiss Payment Instrument Institution backed by kinetic, hardware-level Intellectual Property.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">The current Pre-Launch phase offers an unrepeatable exchange rate. At T-Minus D-33h, the token dynamically hard-pegs to 3.3 nM° per 1 CHF. The earlier you secure your allocation, the higher the arbitrage yield.</p>
                     </div>
                 </div>
                 
-                <!-- Capitalization Metrics Dashboard -->
-                <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 overflow-hidden bg-black rounded-sm group h-full min-h-[400px]">
-                    <!-- Efecto de fondo sutil holográfico -->
-                    <div class="absolute inset-0 opacity-10 group-hover:opacity-30 transition-opacity duration-700" style="background-image: url('Firefly_GeminiFlash_A%20high-end%20luxury%20brand%20identity.jpg'); background-size: cover; background-position: center;"></div>
+                <!-- Live Pre-Sale Interactive Dashboard -->
+                <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 overflow-hidden bg-black rounded-sm group h-full min-h-[450px] glow-border">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-transparent to-transparent z-0"></div>
                     
                     <div class="relative z-10 space-y-6 font-mono w-full">
-                        <div class="text-center mb-8 border-b border-gray-800 pb-4">
-                            <h3 class="text-[--adamas-cyan] font-bold text-lg md:text-xl tracking-widest glow-cyan">MANOO S.R.L.</h3>
-                            <span class="text-xs text-gray-500 uppercase tracking-widest">Live Capitalization Metrics</span>
+                        <div class="text-center mb-6 border-b border-gray-800 pb-4">
+                            <h3 class="text-[--adamas-cyan] font-bold text-xl tracking-widest glow-cyan">INITIAL LIQUIDITY OFFERING</h3>
+                            <span class="text-xs text-gray-500 uppercase tracking-widest">Dynamic Exchange Rate Active</span>
                         </div>
                         
-                        <div class="flex justify-between items-end border-b border-gray-800 pb-3 hover:border-[--forge-copper] transition-colors cursor-default">
-                            <div class="flex flex-col">
-                                <span class="text-gray-500 text-[10px] uppercase tracking-wider mb-1">FINIA Status (Oct 2025)</span>
-                                <span class="text-gray-200 text-sm">Payment Instrument Inst.</span>
+                        <!-- Dynamic Rate Display -->
+                        <div class="bg-[--gunmetal] bg-opacity-50 p-6 rounded border border-gray-700 text-center mb-6">
+                            <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">Current Pre-Launch Rate</p>
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2">
+                                1 CHF = <span id="current-rate-display" class="text-[--adamas-cyan] glow-cyan">6.60</span> nM°
                             </div>
-                            <span class="text-green-500 font-bold text-sm flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>ACTIVE
-                            </span>
-                        </div>
-                        
-                        <div class="flex justify-between items-end border-b border-gray-800 pb-3 hover:border-[--forge-copper] transition-colors cursor-default">
-                            <div class="flex flex-col">
-                                <span class="text-gray-500 text-[10px] uppercase tracking-wider mb-1">Node Exit Strategy (M&A)</span>
-                                <span class="text-gray-200 text-sm">Exclusive Licensing</span>
-                            </div>
-                            <span class="text-[--adamas-cyan] font-bold text-lg">10x - 30x</span>
-                        </div>
-                        
-                        <div class="flex justify-between items-end border-b border-gray-800 pb-3 hover:border-[--forge-copper] transition-colors cursor-default">
-                            <div class="flex flex-col">
-                                <span class="text-gray-500 text-[10px] uppercase tracking-wider mb-1">Cap Table Dilution</span>
-                                <span class="text-gray-200 text-sm">Founder Sovereignty</span>
-                            </div>
-                            <span class="text-gray-400 font-bold text-lg">0.00%</span>
+                            <p class="text-[--forge-copper] text-xs">Target Launch Rate (D-33h): 1 CHF = 3.30 nM°</p>
                         </div>
 
-                        <div class="flex justify-between items-end border-b border-gray-800 pb-3 hover:border-[--forge-copper] transition-colors cursor-default">
-                            <div class="flex flex-col">
-                                <span class="text-gray-500 text-[10px] uppercase tracking-wider mb-1">Corporate Security</span>
-                                <span class="text-gray-200 text-sm">Drag-Along & Call Option</span>
+                        <!-- 33-Hour Cycle Countdown -->
+                        <div class="text-center mb-8 border-b border-gray-800 pb-6">
+                            <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Next Rate Decrease In (33h Cycle):</p>
+                            <div class="text-2xl font-bold text-white tracking-widest flex items-center justify-center font-mono">
+                                <span class="text-gray-400 mr-2 text-sm">T-MINUS:</span>
+                                <div id="cycle-hours" class="w-10">32</div><span class="text-[--adamas-cyan] mx-1">:</span>
+                                <div id="cycle-minutes" class="w-10">59</div><span class="text-[--adamas-cyan] mx-1">:</span>
+                                <div id="cycle-seconds" class="w-10">59</div>
                             </div>
-                            <span class="text-[--forge-copper] font-bold text-sm">LOCKED</span>
                         </div>
                         
-                        <div class="mt-10 pt-4 text-center">
-                            <button class="w-full border border-[--adamas-cyan] text-[--adamas-cyan] bg-black bg-opacity-50 px-6 py-4 text-xs uppercase tracking-widest hover:bg-[--adamas-cyan] hover:text-black transition-all glow-border font-bold">
-                                > Initialize Pitch Deck Request
+                        <!-- Interactive Calculator -->
+                        <div class="space-y-4">
+                            <p class="text-xs text-gray-400 uppercase tracking-widest">Calculate Your Allocation</p>
+                            <div class="flex items-center justify-between bg-black border border-gray-700 p-2 focus-within:border-[--adamas-cyan] transition-colors">
+                                <span class="text-gray-500 pl-3">CHF</span>
+                                <input type="number" id="chf-input" value="1000" class="bg-transparent text-white text-right font-bold outline-none w-full pr-3" oninput="calculateTokens()">
+                            </div>
+                            
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-400">You Receive Today:</span>
+                                <span class="text-[--adamas-cyan] font-bold text-lg"><span id="nm-received">6,600</span> nM°</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs text-gray-600">
+                                <span>Value at Launch (D-33h):</span>
+                                <span><span id="chf-future-value">2,000</span> CHF</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-4 text-center">
+                            <button class="w-full bg-[--adamas-cyan] text-black px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all glow-cyan">
+                                Secure Allocation Now
                             </button>
                         </div>
                     </div>
@@ -371,13 +377,13 @@
                 <div class="chrono-mechanical-ring"></div>
                 
                 <div class="chrono-core">
-                    <span class="font-mono text-[--forge-copper] text-xs uppercase tracking-widest mb-2">T-Minus to Execution</span>
+                    <span class="font-mono text-[--forge-copper] text-xs uppercase tracking-widest mb-2">Global Launch Sequence</span>
                     
                     <!-- Displays del Cronómetro -->
                     <div class="font-mono text-4xl md:text-5xl font-bold text-white tracking-wider flex items-center justify-center glow-cyan w-full">
-                        <div class="w-20 text-center" id="days">165</div><span class="text-gray-600 text-2xl mx-1">:</span>
-                        <div class="w-16 text-center" id="hours">33</div><span class="text-gray-600 text-2xl mx-1">:</span>
-                        <div class="w-16 text-center" id="minutes">00</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                        <div class="w-20 text-center" id="days">143</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                        <div class="w-16 text-center" id="hours">03</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                        <div class="w-16 text-center" id="minutes">22</div><span class="text-gray-600 text-2xl mx-1">:</span>
                         <div class="w-16 text-center text-[--adamas-cyan]" id="seconds">00</div>
                     </div>
                     
@@ -402,72 +408,92 @@
         </div>
     </section>
 
-    <!-- MOTOR JAVASCRIPT: ROUTING Y CRONÓMETRO -->
+    <!-- MOTOR JAVASCRIPT: ROUTING Y CRONÓMETROS -->
     <script>
-        // 1. NAVEGACIÓN SPA (Single Page Application Router)
+        // 1. NAVEGACIÓN SPA
         function navigate(sectionId) {
-            // Ocultar todas las secciones
-            document.querySelectorAll('.page-section').forEach(sec => {
-                sec.classList.remove('active');
-            });
-            // Mostrar la sección objetivo
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
             
-            // Actualizar el estado visual del menú de navegación
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active-link');
-                if(link.getAttribute('href') === '#' + sectionId) {
-                    link.classList.add('active-link');
-                }
+                if(link.getAttribute('href') === '#' + sectionId) link.classList.add('active-link');
             });
 
-            // Actualizar URL sin recargar
             history.pushState(null, null, '#' + sectionId);
             window.scrollTo(0,0);
         }
 
-        // Leer el hash al cargar la página (por si alguien entra directo a manoo.io/#investors)
         window.addEventListener('load', () => {
             let hash = window.location.hash.substring(1);
-            if(hash && document.getElementById(hash)) {
-                navigate(hash);
-            }
+            if(hash && document.getElementById(hash)) navigate(hash);
         });
 
-        // 2. CRONÓMETRO: FUSIÓN MECÁNICA / DIGITAL
-        const targetDate = new Date("2026-08-01T00:00:00Z").getTime();
-
+        // 2. CRONÓMETROS Y CALCULADORA DE PREVENTA (143 Days : 03 Hrs : 22 Min)
+        const nowMs = new Date().getTime();
+        const globalTargetMs = nowMs + (143 * 24 * 60 * 60 * 1000) + (3 * 60 * 60 * 1000) + (22 * 60 * 1000);
+        
         const elDays = document.getElementById('days');
         const elHours = document.getElementById('hours');
         const elMinutes = document.getElementById('minutes');
         const elSeconds = document.getElementById('seconds');
         const elMs = document.getElementById('ms');
 
-        function updateChronometer() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
+        const elCycleHours = document.getElementById('cycle-hours');
+        const elCycleMinutes = document.getElementById('cycle-minutes');
+        const elCycleSeconds = document.getElementById('cycle-seconds');
+        
+        const maxRate = 6.60;
+        const minRate = 3.30;
+        let currentDynamicRate = maxRate; 
 
-            if (distance < 0) {
-                elDays.innerText = "000"; elHours.innerText = "00";
-                elMinutes.innerText = "00"; elSeconds.innerText = "00"; elMs.innerText = "000";
-                return;
+        function calculateTokens() {
+            const chfAmount = parseFloat(document.getElementById('chf-input').value) || 0;
+            const nmReceived = chfAmount * currentDynamicRate;
+            const valueAtLaunch = nmReceived / minRate; 
+            
+            document.getElementById('nm-received').innerText = nmReceived.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('chf-future-value').innerText = valueAtLaunch.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        function updateTimers() {
+            const now = new Date().getTime();
+            
+            // --- CRONÓMETRO GLOBAL ---
+            const distance = globalTargetMs - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const milliseconds = Math.floor((distance % 1000));
+
+                elDays.innerText = days.toString().padStart(3, '0');
+                elHours.innerText = hours.toString().padStart(2, '0');
+                elMinutes.innerText = minutes.toString().padStart(2, '0');
+                elSeconds.innerText = seconds.toString().padStart(2, '0');
+                elMs.innerText = milliseconds.toString().padStart(3, '0');
             }
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            const milliseconds = Math.floor((distance % 1000));
+            // --- CRONÓMETRO DEL CICLO DE 33 HORAS ---
+            const cycleMs = 33 * 60 * 60 * 1000;
+            const cycleDistance = cycleMs - (now % cycleMs); 
+            
+            const cHours = Math.floor((cycleDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const cMinutes = Math.floor((cycleDistance % (1000 * 60 * 60)) / (1000 * 60));
+            const cSeconds = Math.floor((cycleDistance % (1000 * 60)) / 1000);
+            
+            elCycleHours.innerText = cHours.toString().padStart(2, '0');
+            elCycleMinutes.innerText = cMinutes.toString().padStart(2, '0');
+            elCycleSeconds.innerText = cSeconds.toString().padStart(2, '0');
 
-            elDays.innerText = days.toString().padStart(3, '0');
-            elHours.innerText = hours.toString().padStart(2, '0');
-            elMinutes.innerText = minutes.toString().padStart(2, '0');
-            elSeconds.innerText = seconds.toString().padStart(2, '0');
-            elMs.innerText = milliseconds.toString().padStart(3, '0');
-
-            requestAnimationFrame(updateChronometer);
+            requestAnimationFrame(updateTimers);
         }
-        requestAnimationFrame(updateChronometer);
+
+        // Inicializar
+        calculateTokens();
+        requestAnimationFrame(updateTimers);
     </script>
 </body>
 </html>
