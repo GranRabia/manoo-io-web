@@ -154,7 +154,7 @@
         }
     </style>
 </head>
-<body class="bg-grid">
+<body class="bg-grid flex flex-col min-h-screen">
 
     <!-- HEADER / NAVEGACIÓN -->
     <header class="fixed w-full top-0 z-50 glass-panel py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-900">
@@ -179,234 +179,260 @@
         </nav>
     </header>
 
-    <!-- ==============================================
-         SECCIÓN 1: HOME (THE OCTET DRAFT)
-         ============================================== -->
-    <section id="home" class="page-section active">
-        <div class="hero-split">
-            <div class="hero-side side-tech">
-                <div class="hero-content">
-                    <p class="font-mono text-[--adamas-cyan] text-xs tracking-widest mb-4 uppercase glow-cyan">The Vault (Zoug)</p>
-                    <h2 class="text-4xl font-bold mb-4 tracking-tight">Immutable Code.<br>Swiss Sovereignty.</h2>
-                </div>
-            </div>
-            <div class="hero-side side-physical">
-                <div class="hero-content">
-                    <p class="font-mono text-[--forge-copper] text-xs tracking-widest mb-4 uppercase glow-copper">The Engine (Vaud)</p>
-                    <h2 class="text-4xl font-bold mb-4 tracking-tight">Kinetic IP.<br>Physical Execution.</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="max-w-5xl mx-auto px-6 py-20">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl font-extrabold tracking-tight mb-4">THE OCTET DRAFT</h1>
-                <p class="text-gray-400 font-mono text-sm">3960-Hour Crucible. Only 27 Elite Operators will stay.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs text-gray-400">
-                <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
-                    <span class="text-white font-bold block mb-3 text-sm">I. FINANCIAL</span>
-                    Dual-token hydrostatic model. The $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. 33/66/1 routing ratio required.
-                </div>
-                <div class="glass-panel p-6 border-t-2 border-t-[--forge-copper]">
-                    <span class="text-white font-bold block mb-3 text-sm">II. LEGAL</span>
-                    Class B Equity represents economic rights via Class Asymmetry. Zero veto power. Drag-Along clause ensures frictionless exits.
-                </div>
-                <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
-                    <span class="text-white font-bold block mb-3 text-sm">III. TECH</span>
-                    The Adamas Hash is blind without legal execution. IP transfer requires Ricardian contracts exchanging Fiat & Utility simultaneously.
-                </div>
-            </div>
-            <div class="mt-12 text-center">
-                <button onclick="navigate('chronometer')" class="border border-[--adamas-cyan] text-[--adamas-cyan] px-8 py-3 font-mono text-xs tracking-widest uppercase hover:bg-[--adamas-cyan] hover:text-black transition-colors glow-border">
-                    Access The Gateway
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==============================================
-         SECCIÓN 2: VISION
-         ============================================== -->
-    <section id="vision" class="page-section">
-        <div class="max-w-5xl mx-auto px-6 py-12">
-            <h2 class="text-[--forge-copper] font-mono text-sm uppercase tracking-widest mb-2">Lex Mercatoria</h2>
-            <h1 class="text-5xl font-extrabold mb-12">REVERSING ENTROPY IN <br>INDUSTRIAL LOGISTICS.</h1>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-[--adamas-cyan]">The Adamas Hash</h3>
-                    <p class="text-gray-400 leading-relaxed mb-6">El modelo industrial tradicional es entrópico por diseño: desperdicio, intermediarios y opacidad. Manoo instaura la "Lex Mercatoria" de la era descentralizada. A través del Adamas Hash, cristalizamos el esfuerzo humano y corporativo en valor digital inmutable.</p>
-                    <ul class="space-y-3 font-mono text-xs text-gray-300 border-l border-[--gunmetal] pl-4">
-                        <li>> Transparencia Termodinámica</li>
-                        <li>> Cero Muda (Zero Waste)</li>
-                        <li>> Propiedad Intelectual Cinética</li>
-                    </ul>
-                </div>
-                <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative">
-                    <img src="crystal.jpg" class="corp-img" alt="Adamas Hash">
-                    <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--adamas-cyan]">Fig 1. Crystallization Process</div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center flex-row-reverse">
-                <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative md:order-1">
-                    <img src="Siphon%20.jpg" class="corp-img" alt="Thermodynamic Siphon">
-                    <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--forge-copper]">Fig 2. The 33/66/1 Siphon</div>
-                </div>
-                <div class="md:order-2">
-                    <h3 class="text-2xl font-bold mb-4 text-[--forge-copper]">Thermodynamic Siphon</h3>
-                    <p class="text-gray-400 leading-relaxed">El flujo de capital obedece a leyes físicas. Nuestro sifón termodinámico distribuye la riqueza generada en una proporción estricta de 33/66/1. Extraemos el valor del caos y lo redirigimos hacia los creadores de utilidad, garantizando la presión operativa perpetua.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==============================================
-         SECCIÓN 3: PRE-SALE / INVESTORS ("LA MIEL")
-         ============================================== -->
-    <section id="investors" class="page-section">
-        <div class="max-w-6xl mx-auto px-6 py-12">
-            <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">Early Access Offering</h2>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-12">SECURE YOUR ASYMMETRY.<br>BEFORE THE HARD PEG.</h1>
-
-            <div class="glass-panel p-8 md:p-10 mb-12 border-l-4 border-[--adamas-cyan]">
-                <p class="text-lg md:text-xl text-gray-300 font-light italic leading-relaxed">
-                    "Wealth is generated in the asymmetry of early access. The Manoo network enforces a strict 33-hour halving cycle leading up to the global D-33h deployment. Secure your execution packages while the arbitrage exists."
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="space-y-6">
-                    <!-- Point 1 -->
-                    <div class="p-6 border border-gray-800 bg-black hover:border-[--forge-copper] transition-colors duration-300">
-                        <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
-                            <span class="text-[--forge-copper]">01.</span> Betis Exclusive Access
-                        </h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Acquire a foundational AI Node before the global rollout. Securing a Betis Node grants you perpetual 33% yield routing on all structured IP passing through your vertical. <br><span class="text-[--forge-copper] font-bold mt-2 inline-block">Allocation requirement: 3,300 nM°</span></p>
+    <!-- CONTENT WRAPPER -->
+    <div class="flex-grow">
+        <!-- ==============================================
+             SECCIÓN 1: HOME (THE OCTET DRAFT)
+             ============================================== -->
+        <section id="home" class="page-section active">
+            <div class="hero-split">
+                <div class="hero-side side-tech">
+                    <div class="hero-content">
+                        <p class="font-mono text-[--adamas-cyan] text-xs tracking-widest mb-4 uppercase glow-cyan">The Vault (Zoug)</p>
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight">Immutable Code.<br>Swiss Sovereignty.</h2>
                     </div>
-                    
-                    <!-- Point 2 -->
-                    <div class="p-6 border border-gray-800 bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
-                        <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
-                            <span class="text-[--adamas-cyan]">02.</span> 3.3 Min Execution Packages
-                        </h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">Pre-purchase high-density algorithmic compute time for the Manoovers ecosystem. Secure your execution packages today at a severe discount before the live environment locks the standard rate. <br><span class="text-[--adamas-cyan] font-bold mt-2 inline-block">Allocation requirement: 330 nM°</span></p>
+                </div>
+                <div class="hero-side side-physical">
+                    <div class="hero-content">
+                        <p class="font-mono text-[--forge-copper] text-xs tracking-widest mb-4 uppercase glow-copper">The Engine (Vaud)</p>
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight">Kinetic IP.<br>Physical Execution.</h2>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Point 3 -->
-                    <div class="p-6 border border-gray-800 bg-black hover:border-green-500 transition-colors duration-300">
-                        <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
-                            <span class="text-green-500">03.</span> The Yield Arbitrage
-                        </h4>
-                        <p class="text-sm text-gray-400 leading-relaxed">The current Pre-Launch phase offers an unrepeatable exchange rate. At T-Minus D-33h, the token dynamically hard-pegs to 3.3 nM° per 1 CHF. The earlier you secure your allocation, the higher the arbitrage yield.</p>
-                    </div>
+            <div class="max-w-5xl mx-auto px-6 py-20">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-extrabold tracking-tight mb-4">THE OCTET DRAFT</h1>
+                    <p class="text-gray-400 font-mono text-sm">3960-Hour Crucible. Only 27 Elite Operators will stay.</p>
                 </div>
                 
-                <!-- Live Pre-Sale Interactive Dashboard -->
-                <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 overflow-hidden bg-black rounded-sm group h-full min-h-[450px] glow-border">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-transparent to-transparent z-0"></div>
-                    
-                    <div class="relative z-10 space-y-6 font-mono w-full">
-                        <div class="text-center mb-6 border-b border-gray-800 pb-4">
-                            <h3 class="text-[--adamas-cyan] font-bold text-xl tracking-widest glow-cyan">INITIAL LIQUIDITY OFFERING</h3>
-                            <span class="text-xs text-gray-500 uppercase tracking-widest">Dynamic Exchange Rate Active</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs text-gray-400">
+                    <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
+                        <span class="text-white font-bold block mb-3 text-sm">I. FINANCIAL</span>
+                        Dual-token hydrostatic model. The $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. 33/66/1 routing ratio required.
+                    </div>
+                    <div class="glass-panel p-6 border-t-2 border-t-[--forge-copper]">
+                        <span class="text-white font-bold block mb-3 text-sm">II. LEGAL</span>
+                        Class B Equity represents economic rights via Class Asymmetry. Zero veto power. Drag-Along clause ensures frictionless exits.
+                    </div>
+                    <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
+                        <span class="text-white font-bold block mb-3 text-sm">III. TECH</span>
+                        The Adamas Hash is blind without legal execution. IP transfer requires Ricardian contracts exchanging Fiat & Utility simultaneously.
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <button onclick="navigate('chronometer')" class="border border-[--adamas-cyan] text-[--adamas-cyan] px-8 py-3 font-mono text-xs tracking-widest uppercase hover:bg-[--adamas-cyan] hover:text-black transition-colors glow-border">
+                        Access The Gateway
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECCIÓN 2: VISION
+             ============================================== -->
+        <section id="vision" class="page-section">
+            <div class="max-w-5xl mx-auto px-6 py-12">
+                <h2 class="text-[--forge-copper] font-mono text-sm uppercase tracking-widest mb-2">Lex Mercatoria</h2>
+                <h1 class="text-5xl font-extrabold mb-12">REVERSING ENTROPY IN <br>INDUSTRIAL LOGISTICS.</h1>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-[--adamas-cyan]">The Adamas Hash</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">El modelo industrial tradicional es entrópico por diseño: desperdicio, intermediarios y opacidad. Manoo instaura la "Lex Mercatoria" de la era descentralizada. A través del Adamas Hash, cristalizamos el esfuerzo humano y corporativo en valor digital inmutable.</p>
+                        <ul class="space-y-3 font-mono text-xs text-gray-300 border-l border-[--gunmetal] pl-4">
+                            <li>> Transparencia Termodinámica</li>
+                            <li>> Cero Muda (Zero Waste)</li>
+                            <li>> Propiedad Intelectual Cinética</li>
+                        </ul>
+                    </div>
+                    <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative">
+                        <img src="crystal.jpg" class="corp-img" alt="Adamas Hash">
+                        <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--adamas-cyan]">Fig 1. Crystallization Process</div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center flex-row-reverse">
+                    <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative md:order-1">
+                        <img src="Siphon%20.jpg" class="corp-img" alt="Thermodynamic Siphon">
+                        <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--forge-copper]">Fig 2. The 33/66/1 Siphon</div>
+                    </div>
+                    <div class="md:order-2">
+                        <h3 class="text-2xl font-bold mb-4 text-[--forge-copper]">Thermodynamic Siphon</h3>
+                        <p class="text-gray-400 leading-relaxed">El flujo de capital obedece a leyes físicas. Nuestro sifón termodinámico distribuye la riqueza generada en una proporción estricta de 33/66/1. Extraemos el valor del caos y lo redirigimos hacia los creadores de utilidad, garantizando la presión operativa perpetua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             SECCIÓN 3: PRE-SALE / INVESTORS ("LA MIEL")
+             ============================================== -->
+        <section id="investors" class="page-section">
+            <div class="max-w-6xl mx-auto px-6 py-12">
+                <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">Early Access Offering</h2>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-12">SECURE YOUR ASYMMETRY.<br>BEFORE THE HARD PEG.</h1>
+
+                <div class="glass-panel p-8 md:p-10 mb-12 border-l-4 border-[--adamas-cyan]">
+                    <p class="text-lg md:text-xl text-gray-300 font-light italic leading-relaxed">
+                        "Wealth is generated in the asymmetry of early access. The Manoo network enforces a strict 33-hour halving cycle leading up to the global D-33h deployment. Secure your execution packages while the arbitrage exists."
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <!-- Point 1 -->
+                        <div class="p-6 border border-gray-800 bg-black hover:border-[--forge-copper] transition-colors duration-300">
+                            <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
+                                <span class="text-[--forge-copper]">01.</span> Betis Exclusive Access
+                            </h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">Acquire a foundational AI Node before the global rollout. Securing a Betis Node grants you perpetual 33% yield routing on all structured IP passing through your vertical. <br><span class="text-[--forge-copper] font-bold mt-2 inline-block">Allocation requirement: 3,300 nM°</span></p>
                         </div>
                         
-                        <!-- Dynamic Rate Display -->
-                        <div class="bg-[--gunmetal] bg-opacity-50 p-6 rounded border border-gray-700 text-center mb-6">
-                            <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">Current Pre-Launch Rate</p>
-                            <div class="text-3xl md:text-4xl font-bold text-white mb-2">
-                                1 CHF = <span id="current-rate-display" class="text-[--adamas-cyan] glow-cyan">6.60</span> nM°
-                            </div>
-                            <p class="text-[--forge-copper] text-xs">Target Launch Rate (D-33h): 1 CHF = 3.30 nM°</p>
+                        <!-- Point 2 -->
+                        <div class="p-6 border border-gray-800 bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
+                            <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
+                                <span class="text-[--adamas-cyan]">02.</span> 3.3 Min Execution Packages
+                            </h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">Pre-purchase high-density algorithmic compute time for the Manoovers ecosystem. Secure your execution packages today at a severe discount before the live environment locks the standard rate. <br><span class="text-[--adamas-cyan] font-bold mt-2 inline-block">Allocation requirement: 330 nM°</span></p>
                         </div>
 
-                        <!-- 33-Hour Cycle Countdown -->
-                        <div class="text-center mb-8 border-b border-gray-800 pb-6">
-                            <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Next Rate Decrease In (33h Cycle):</p>
-                            <div class="text-2xl font-bold text-white tracking-widest flex items-center justify-center font-mono">
-                                <span class="text-gray-400 mr-2 text-sm">T-MINUS:</span>
-                                <div id="cycle-hours" class="w-10">32</div><span class="text-[--adamas-cyan] mx-1">:</span>
-                                <div id="cycle-minutes" class="w-10">59</div><span class="text-[--adamas-cyan] mx-1">:</span>
-                                <div id="cycle-seconds" class="w-10">59</div>
-                            </div>
+                        <!-- Point 3 -->
+                        <div class="p-6 border border-gray-800 bg-black hover:border-green-500 transition-colors duration-300">
+                            <h4 class="font-bold text-white mb-2 font-mono flex items-center gap-3">
+                                <span class="text-green-500">03.</span> The Yield Arbitrage
+                            </h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">The current Pre-Launch phase offers an unrepeatable exchange rate. At T-Minus D-33h, the token dynamically hard-pegs to 3.3 nM° per 1 CHF. The earlier you secure your allocation, the higher the arbitrage yield.</p>
                         </div>
+                    </div>
+                    
+                    <!-- Live Pre-Sale Interactive Dashboard -->
+                    <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 overflow-hidden bg-black rounded-sm group h-full min-h-[450px] glow-border">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-transparent to-transparent z-0"></div>
                         
-                        <!-- Interactive Calculator -->
-                        <div class="space-y-4">
-                            <p class="text-xs text-gray-400 uppercase tracking-widest">Calculate Your Allocation</p>
-                            <div class="flex items-center justify-between bg-black border border-gray-700 p-2 focus-within:border-[--adamas-cyan] transition-colors">
-                                <span class="text-gray-500 pl-3">CHF</span>
-                                <input type="number" id="chf-input" value="1000" class="bg-transparent text-white text-right font-bold outline-none w-full pr-3" oninput="calculateTokens()">
+                        <div class="relative z-10 space-y-6 font-mono w-full">
+                            <div class="text-center mb-6 border-b border-gray-800 pb-4">
+                                <h3 class="text-[--adamas-cyan] font-bold text-xl tracking-widest glow-cyan">INITIAL LIQUIDITY OFFERING</h3>
+                                <span class="text-xs text-gray-500 uppercase tracking-widest">Dynamic Exchange Rate Active</span>
                             </div>
                             
-                            <div class="flex justify-between items-center text-sm">
-                                <span class="text-gray-400">You Receive Today:</span>
-                                <span class="text-[--adamas-cyan] font-bold text-lg"><span id="nm-received">6,600</span> nM°</span>
+                            <!-- Dynamic Rate Display -->
+                            <div class="bg-[--gunmetal] bg-opacity-50 p-6 rounded border border-gray-700 text-center mb-6">
+                                <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">Current Pre-Launch Rate</p>
+                                <div class="text-3xl md:text-4xl font-bold text-white mb-2">
+                                    1 CHF = <span id="current-rate-display" class="text-[--adamas-cyan] glow-cyan">6.60</span> nM°
+                                </div>
+                                <p class="text-[--forge-copper] text-xs">Target Launch Rate (D-33h): 1 CHF = 3.30 nM°</p>
                             </div>
-                            <div class="flex justify-between items-center text-xs text-gray-600">
-                                <span>Value at Launch (D-33h):</span>
-                                <span><span id="chf-future-value">2,000</span> CHF</span>
-                            </div>
-                        </div>
 
-                        <div class="mt-8 pt-4 text-center">
-                            <button class="w-full bg-[--adamas-cyan] text-black px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all glow-cyan">
-                                Secure Allocation Now
-                            </button>
+                            <!-- 33-Hour Cycle Countdown -->
+                            <div class="text-center mb-8 border-b border-gray-800 pb-6">
+                                <p class="text-gray-500 text-[10px] uppercase tracking-wider mb-2">Next Rate Decrease In (33h Cycle):</p>
+                                <div class="text-2xl font-bold text-white tracking-widest flex items-center justify-center font-mono">
+                                    <span class="text-gray-400 mr-2 text-sm">T-MINUS:</span>
+                                    <div id="cycle-hours" class="w-10">32</div><span class="text-[--adamas-cyan] mx-1">:</span>
+                                    <div id="cycle-minutes" class="w-10">59</div><span class="text-[--adamas-cyan] mx-1">:</span>
+                                    <div id="cycle-seconds" class="w-10">59</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Interactive Calculator -->
+                            <div class="space-y-4">
+                                <p class="text-xs text-gray-400 uppercase tracking-widest">Calculate Your Allocation</p>
+                                <div class="flex items-center justify-between bg-black border border-gray-700 p-2 focus-within:border-[--adamas-cyan] transition-colors">
+                                    <span class="text-gray-500 pl-3">CHF</span>
+                                    <input type="number" id="chf-input" value="1000" class="bg-transparent text-white text-right font-bold outline-none w-full pr-3" oninput="calculateTokens()">
+                                </div>
+                                
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400">You Receive Today:</span>
+                                    <span class="text-[--adamas-cyan] font-bold text-lg"><span id="nm-received">6,600</span> nM°</span>
+                                </div>
+                                <div class="flex justify-between items-center text-xs text-gray-600">
+                                    <span>Value at Launch (D-33h):</span>
+                                    <span><span id="chf-future-value">2,000</span> CHF</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-4 text-center">
+                                <button class="w-full bg-[--adamas-cyan] text-black px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all glow-cyan">
+                                    Secure Allocation Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ==============================================
+             SECCIÓN 4: CHRONOMETER (EXECUTE)
+             ============================================== -->
+        <section id="chronometer" class="page-section">
+            <div class="max-w-4xl mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-[80vh]">
+                
+                <h2 class="text-[--alabaster] font-mono text-lg uppercase tracking-widest mb-10 glow-cyan">Terminal Initialization</h2>
+
+                <!-- EL RELOJ MECÁNICO/DIGITAL -->
+                <div class="chronometer-container mb-12">
+                    <div class="chrono-digital-ring"></div>
+                    <div class="chrono-mechanical-ring"></div>
+                    
+                    <div class="chrono-core">
+                        <span class="font-mono text-[--forge-copper] text-xs uppercase tracking-widest mb-2">Global Launch Sequence</span>
+                        
+                        <!-- Displays del Cronómetro -->
+                        <div class="font-mono text-4xl md:text-5xl font-bold text-white tracking-wider flex items-center justify-center glow-cyan w-full">
+                            <div class="w-20 text-center" id="days">143</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                            <div class="w-16 text-center" id="hours">03</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                            <div class="w-16 text-center" id="minutes">22</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                            <div class="w-16 text-center text-[--adamas-cyan]" id="seconds">00</div>
+                        </div>
+                        
+                        <div class="flex gap-4 font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-2 w-full justify-center">
+                            <span class="w-20 text-center">Days</span>
+                            <span class="w-16 text-center">Hrs</span>
+                            <span class="w-16 text-center">Min</span>
+                            <span class="w-16 text-center">Sec</span>
+                        </div>
+
+                        <!-- Milisegundos Digitales Rápidos -->
+                        <div id="ms" class="font-mono text-[--adamas-cyan] text-sm mt-4 tracking-[0.3em] opacity-80">000</div>
+                    </div>
+                </div>
+
+                <div class="w-full max-w-lg bg-black border border-[--gunmetal] p-1 font-mono text-xs flex items-center justify-between">
+                    <input type="text" placeholder="Enter Ricardian Passkey..." class="w-full bg-transparent text-white px-4 outline-none placeholder-gray-700">
+                    <button class="bg-[--adamas-cyan] text-black font-bold px-6 py-3 uppercase hover:bg-white transition-colors">Execute</button>
+                </div>
+                
+                <p class="font-mono text-[10px] text-gray-600 uppercase tracking-widest mt-8">System locked pending temporal synchronization.</p>
+            </div>
+        </section>
+    </div>
 
     <!-- ==============================================
-         SECCIÓN 4: CHRONOMETER (EXECUTE)
+         REGULATORY & LIABILITY DISCLOSURES (FOOTER)
          ============================================== -->
-    <section id="chronometer" class="page-section">
-        <div class="max-w-4xl mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-[80vh]">
+    <footer class="w-full bg-[#05070A] border-t border-[--gunmetal] py-10 px-6 mt-16 z-10 relative">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            <h4 class="font-mono text-xs text-[--forge-copper] uppercase tracking-widest mb-6 border-b border-gray-800 pb-2 w-full text-center">Legal Disclaimer & Regulatory Disclosure</h4>
             
-            <h2 class="text-[--alabaster] font-mono text-lg uppercase tracking-widest mb-10 glow-cyan">Terminal Initialization</h2>
-
-            <!-- EL RELOJ MECÁNICO/DIGITAL -->
-            <div class="chronometer-container mb-12">
-                <div class="chrono-digital-ring"></div>
-                <div class="chrono-mechanical-ring"></div>
+            <div class="space-y-4 font-mono text-[10px] md:text-xs text-gray-500 leading-relaxed max-w-5xl text-justify md:text-center">
+                <p><strong class="text-gray-400">1. Not Financial Advice:</strong> The information provided on this terminal, including all metrics, dynamic exchange rates, and "Initial Liquidity Offering" (ILO) calculations, does not constitute investment advice, financial advice, trading advice, or any other sort of advice. You should not treat any of the terminal's content as such.</p>
                 
-                <div class="chrono-core">
-                    <span class="font-mono text-[--forge-copper] text-xs uppercase tracking-widest mb-2">Global Launch Sequence</span>
-                    
-                    <!-- Displays del Cronómetro -->
-                    <div class="font-mono text-4xl md:text-5xl font-bold text-white tracking-wider flex items-center justify-center glow-cyan w-full">
-                        <div class="w-20 text-center" id="days">143</div><span class="text-gray-600 text-2xl mx-1">:</span>
-                        <div class="w-16 text-center" id="hours">03</div><span class="text-gray-600 text-2xl mx-1">:</span>
-                        <div class="w-16 text-center" id="minutes">22</div><span class="text-gray-600 text-2xl mx-1">:</span>
-                        <div class="w-16 text-center text-[--adamas-cyan]" id="seconds">00</div>
-                    </div>
-                    
-                    <div class="flex gap-4 font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-2 w-full justify-center">
-                        <span class="w-20 text-center">Days</span>
-                        <span class="w-16 text-center">Hrs</span>
-                        <span class="w-16 text-center">Min</span>
-                        <span class="w-16 text-center">Sec</span>
-                    </div>
-
-                    <!-- Milisegundos Digitales Rápidos -->
-                    <div id="ms" class="font-mono text-[--adamas-cyan] text-sm mt-4 tracking-[0.3em] opacity-80">000</div>
-                </div>
+                <p><strong class="text-gray-400">2. Experimental Technology & Risk of Loss:</strong> The Manoovers Protocol, the $M° reserve mechanism, and the $nM° nodal yield are highly experimental technologies under active development. Participation involves significant risks, including but not limited to smart contract vulnerabilities, market volatility, and the potential total loss of allocated funds. By participating, you acknowledge that you are acquiring cryptographic utility execution packages, not investment securities.</p>
+                
+                <p><strong class="text-gray-400">3. Regulatory Status & Active Structuring:</strong> Manoo S.R.L. (Vaud) and Manoo Verein (Zug) are currently in a preparatory phase of legal structuring and regulatory licensing. This terminal and the Initial Liquidity Offering (ILO) data do not constitute a formal public offering of securities, payment instruments, or regulated financial services. We are actively engaging with regulatory frameworks, including the Swiss Financial Market Supervisory Authority (FINMA), to secure the appropriate authorizations. Until formal licenses are granted, all network interactions, token metrics, and capital allocations are strictly for R&D, structural validation, and private community building. Access is prohibited where restricted by local jurisdiction.</p>
+                
+                <p><strong class="text-gray-400">4. Forward-Looking Statements:</strong> All timelines, structural roadmaps, global launch sequences, and referenced exchange rates (including the "D-33h hard peg") are forward-looking projections and are subject to absolute algorithmic, structural, and regulatory modifications without prior notice.</p>
+                
+                <p class="mt-6 pt-4 border-t border-gray-900 text-gray-600 text-center uppercase tracking-widest">
+                    By accessing and interacting with this terminal, you acknowledge and accept the absolute risks associated with cryptographic utility networks under Swiss jurisdiction. © 2026 Manoo.io.
+                </p>
             </div>
-
-            <div class="w-full max-w-lg bg-black border border-[--gunmetal] p-1 font-mono text-xs flex items-center justify-between">
-                <input type="text" placeholder="Enter Ricardian Passkey..." class="w-full bg-transparent text-white px-4 outline-none placeholder-gray-700">
-                <button class="bg-[--adamas-cyan] text-black font-bold px-6 py-3 uppercase hover:bg-white transition-colors">Execute</button>
-            </div>
-            
-            <p class="font-mono text-[10px] text-gray-600 uppercase tracking-widest mt-8">System locked pending temporal synchronization.</p>
         </div>
-    </section>
+    </footer>
 
     <!-- MOTOR JAVASCRIPT: ROUTING Y CRONÓMETROS -->
     <script>
