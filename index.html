@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MANOO.IO | The Octet Draft</title>
+    <title>MANOO.IO | Sovereign Industrial OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,175 +21,418 @@
             background-color: var(--deep-carbon);
             color: var(--alabaster);
             overflow-x: hidden;
+            margin: 0;
         }
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Efectos de Lujo */
+        .glow-cyan { text-shadow: 0 0 15px rgba(0, 229, 255, 0.6); }
+        .glow-copper { text-shadow: 0 0 15px rgba(184, 115, 51, 0.6); }
+        .glass-panel {
+            background: rgba(10, 13, 20, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .glow-text {
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+
+        /* Sistema de Navegación SPA */
+        .page-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            min-height: 100vh;
+            padding-top: 80px; /* Compensa el header fijo */
         }
-        .glow-border {
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        .page-section.active {
+            display: block;
+            opacity: 1;
         }
-        /* Subtle grid background */
+
+        /* Nav Links Animados */
+        .nav-link {
+            position: relative;
+            color: gray;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active-link {
+            color: var(--alabaster);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 1px;
+            bottom: -4px; left: 0;
+            background-color: var(--adamas-cyan);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active-link::after {
+            width: 100%;
+        }
+
+        /* Hero Split Screen (Home) */
+        .hero-split { height: calc(100vh - 80px); display: flex; position: relative; }
+        .hero-side {
+            flex: 1; background-size: cover; background-position: center;
+            position: relative; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 2rem;
+        }
+        .hero-side::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(10,13,20,0.3), var(--deep-carbon));
+            z-index: 1;
+        }
+        .side-tech { background-image: url('download-2026-02-11T13_50_48.jpg'); border-right: 1px solid rgba(0,229,255,0.2); }
+        .side-physical { background-image: url('siphonaso%20(9-16).jpg'); }
+        .hero-content { position: relative; z-index: 2; max-width: 400px; }
+
+        /* Imágenes corporativas en contenido */
+        .corp-img { width: 100%; height: 300px; object-fit: cover; filter: brightness(0.8) contrast(1.2); transition: 0.5s; }
+        .corp-img:hover { filter: brightness(1) contrast(1); }
+
+        /* =========================================
+           LA OBRA MAESTRA: EL CRONÓMETRO SUIZO-DIGITAL
+           ========================================= */
+        .chronometer-container {
+            position: relative;
+            width: 400px; height: 400px;
+            margin: 0 auto;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        /* 1. Anillo Exterior (Fluidez Digital Ricardiana) */
+        .chrono-digital-ring {
+            position: absolute;
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--adamas-cyan);
+            border-right: 2px solid var(--adamas-cyan);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.3), inset 0 0 20px rgba(0, 229, 255, 0.1);
+            animation: fluid-spin 8s linear infinite;
+        }
+        .chrono-digital-ring::before {
+            content: ''; position: absolute; top: -5px; right: 50%;
+            width: 10px; height: 10px; background: var(--adamas-cyan);
+            border-radius: 50%; box-shadow: 0 0 15px var(--adamas-cyan);
+        }
+
+        /* 2. Anillo Interior (Mecánica Suiza - Engranaje) */
+        .chrono-mechanical-ring {
+            position: absolute;
+            width: 85%; height: 85%;
+            border-radius: 50%;
+            border: 4px dashed var(--forge-copper);
+            opacity: 0.8;
+            /* Pasos exactos simulando los tics de un reloj mecánico */
+            animation: mechanical-tick 60s steps(60) infinite; 
+        }
+
+        /* 3. Núcleo (Datos) */
+        .chrono-core {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(10, 13, 20, 0.9);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            width: 70%; height: 70%;
+            border-radius: 50%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.9);
+        }
+
+        /* Animaciones del Cronómetro */
+        @keyframes fluid-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes mechanical-tick { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Fondo de cuadrícula */
         .bg-grid {
             background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-        }
-        /* Terminal Blinking Cursor */
-        .cursor-blink {
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
         }
     </style>
 </head>
-<body class="bg-grid min-h-screen flex flex-col items-center justify-start relative selection:bg-[#00E5FF] selection:text-[#0A0D14]">
+<body class="bg-grid">
 
-    <!-- Decorative Top Line -->
-    <div class="w-full h-1 bg-gradient-to-r from-[--deep-carbon] via-[--adamas-cyan] to-[--deep-carbon] opacity-50 absolute top-0 left-0"></div>
-
-    <!-- Header -->
-    <header class="w-full max-w-5xl mx-auto py-8 px-6 flex justify-between items-center border-b border-[--gunmetal]">
-        <div class="text-2xl font-extrabold tracking-[0.2em] text-[--alabaster]">
-            M A N O O <span class="text-[--adamas-cyan]">. I O</span>
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="fixed w-full top-0 z-50 glass-panel py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="flex items-center gap-4 cursor-pointer" onclick="navigate('home')">
+            <div class="w-8 h-8 rounded-full border border-[--adamas-cyan] flex items-center justify-center overflow-hidden">
+                <img src="Firefly_GeminiFlash_A%20high-end%20luxury%20brand%20identity.jpg" class="w-full h-full object-cover opacity-80" alt="Manoo Logo">
+            </div>
+            <div class="text-xl font-extrabold tracking-[0.2em] text-[--alabaster]">
+                M A N O O <span class="text-[--adamas-cyan]">. I O</span>
+            </div>
         </div>
-        <div class="font-mono text-xs text-gray-500 uppercase tracking-widest">
-            SYS.STATUS: <span class="text-green-500 glow-text">ONLINE</span>
-        </div>
+        
+        <nav class="hidden md:flex gap-8 font-mono text-xs tracking-widest uppercase">
+            <a href="#home" class="nav-link active-link" onclick="navigate('home')">1. Draft</a>
+            <a href="#vision" class="nav-link" onclick="navigate('vision')">2. Vision</a>
+            <a href="#investors" class="nav-link" onclick="navigate('investors')">3. Investors</a>
+            <a href="#chronometer" class="nav-link" onclick="navigate('chronometer')">4. Execute</a>
+        </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="w-full max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-16">
-        
-        <!-- Left Column: The Crucible -->
-        <div class="flex-1 space-y-10">
-            <div>
-                <h2 class="text-[--forge-copper] font-mono text-sm uppercase tracking-widest mb-2">Public Bounty</h2>
-                <h1 class="text-5xl font-extrabold leading-tight tracking-tight mb-6">
-                    THE OCTET DRAFT:<br>
-                    <span class="text-[--adamas-cyan]">THE 3960-HOUR CRUCIBLE</span>
-                </h1>
-                
-                <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 border-l-2 border-[--gunmetal] pl-4 py-2 font-mono text-sm text-gray-400">
-                    <div><strong class="text-[--alabaster]">Entity:</strong> Betis S.R.L.<br>(Manoo Operational Node)</div>
-                    <div><strong class="text-[--alabaster]">Location:</strong> Remote / Switzerland</div>
-                    <div><strong class="text-[--alabaster]">Mission:</strong> 165 Days<br>(3,960 Hrs Absolute Focus)</div>
+    <!-- ==============================================
+         SECCIÓN 1: HOME (THE OCTET DRAFT)
+         ============================================== -->
+    <section id="home" class="page-section active">
+        <div class="hero-split">
+            <div class="hero-side side-tech">
+                <div class="hero-content">
+                    <p class="font-mono text-[--adamas-cyan] text-xs tracking-widest mb-4 uppercase glow-cyan">The Vault (Zoug)</p>
+                    <h2 class="text-4xl font-bold mb-4 tracking-tight">Immutable Code.<br>Swiss Sovereignty.</h2>
                 </div>
             </div>
-
-            <div class="space-y-6 text-gray-300 leading-relaxed text-lg font-light">
-                <p>You are invited to secure your place in what you will find to be a highly structured Web3 lean manufacturing ecosystem. We are initiating a 3,960-hour thermodynamic sprint to build the operational Proof of Concept for a decentralized industrial engine.</p>
-                <p>If you are humble, confident in your craft, and driven by systemic excellence, solve the entry puzzle. Only <strong class="text-[--alabaster] font-semibold">27 elite operators</strong> will be selected for the vanguard.</p>
-            </div>
-
-            <!-- Breakdown -->
-            <div class="bg-[--gunmetal] bg-opacity-30 border border-gray-800 p-8 rounded-sm">
-                <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-2">STRUCTURAL BREAKDOWN</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-[--forge-copper] font-mono mr-4 mt-1">01.</span>
-                        <div>
-                            <strong class="text-[--alabaster] block text-lg mb-1">19 Vanguard Reserves</strong>
-                            <span class="text-gray-400 text-sm">The tactical priming engine. You are the structural reinforcement maintaining the thermodynamic pressure, ready to seamlessly rotate in to ensure the protocol's continuous execution.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-[--forge-copper] font-mono mr-4 mt-1">02.</span>
-                        <div>
-                            <strong class="text-[--alabaster] block text-lg mb-1">6 Pillars</strong>
-                            <span class="text-gray-400 text-sm">The elite architects executing the physical, legal, and cryptographic code on the front lines.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-[--forge-copper] font-mono mr-4 mt-1">03.</span>
-                        <div>
-                            <strong class="text-[--alabaster] block text-lg mb-1">3 Operational Leads (Betis C-Suite)</strong>
-                            <span class="text-gray-400 text-sm">The tactical directors orchestrating the Proof of Concept and guiding the Betis S.R.L. node.</span>
-                        </div>
-                    </li>
-                </ul>
+            <div class="hero-side side-physical">
+                <div class="hero-content">
+                    <p class="font-mono text-[--forge-copper] text-xs tracking-widest mb-4 uppercase glow-copper">The Engine (Vaud)</p>
+                    <h2 class="text-4xl font-bold mb-4 tracking-tight">Kinetic IP.<br>Physical Execution.</h2>
+                </div>
             </div>
         </div>
 
-        <!-- Right Column: Rules & Gateway -->
-        <div class="flex-1 space-y-10">
+        <div class="max-w-5xl mx-auto px-6 py-20">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-extrabold tracking-tight mb-4">THE OCTET DRAFT</h1>
+                <p class="text-gray-400 font-mono text-sm">3960-Hour Crucible. Only 27 Elite Operators will stay.</p>
+            </div>
             
-            <!-- Rules of Engagement -->
-            <div>
-                <h3 class="text-xl font-bold mb-6 text-[--adamas-cyan] flex items-center">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    RULES OF ENGAGEMENT
-                </h3>
-                <div class="space-y-6 text-sm text-gray-300">
-                    <p><strong class="text-white block mb-1">1. Output over Pedigree:</strong> We do not care where you worked or what your title was. We care how you process pressure and deliver precision in 33-hour cycles.</p>
-                    <p><strong class="text-white block mb-1">2. The Oxygen:</strong> Base funding of 330 nM° (110 CHF) is paid per 33-hour cycle, strictly upon Zero-Muda (waste-free) delivery.</p>
-                    <p><strong class="text-white block mb-1">3. The Tollgates:</strong> Merit-based progression. 132,000 nM° in discretionary bonus pools are reserved strictly for the top-performing nodes who beat the clock and elevate the team.</p>
-                    <p><strong class="text-white block mb-1">4. The Assimilation:</strong> Survive the 3,960 hours and successfully deploy the Proof of Concept. The starting Pillars and Leads will receive a foundational offer: <span class="text-[--forge-copper] font-mono block mt-1">330,000 nM°/year + up to 1.1% Class B Equity</span></p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs text-gray-400">
+                <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
+                    <span class="text-white font-bold block mb-3 text-sm">I. FINANCIAL</span>
+                    Dual-token hydrostatic model. The $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. 33/66/1 routing ratio required.
+                </div>
+                <div class="glass-panel p-6 border-t-2 border-t-[--forge-copper]">
+                    <span class="text-white font-bold block mb-3 text-sm">II. LEGAL</span>
+                    Class B Equity represents economic rights via Class Asymmetry. Zero veto power. Drag-Along clause ensures frictionless exits.
+                </div>
+                <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
+                    <span class="text-white font-bold block mb-3 text-sm">III. TECH</span>
+                    The Adamas Hash is blind without legal execution. IP transfer requires Ricardian contracts exchanging Fiat & Utility simultaneously.
                 </div>
             </div>
-
-            <!-- Law of Thermal Rotation -->
-            <div class="bg-gray-900 border-l-4 border-[--forge-copper] p-6 text-sm italic text-gray-400">
-                <strong class="text-white not-italic block mb-2">The Law of Thermal Rotation:</strong>
-                Should your efficiency drop against the 8 systemic KPIs during the sprint, you will respectfully rotate into the Vanguard Reserve, allowing fresh momentum to take the lead. In this ecosystem, there is no failure, only a continuous re-alignment of talent to ensure the system's survival.
+            <div class="mt-12 text-center">
+                <button onclick="navigate('chronometer')" class="border border-[--adamas-cyan] text-[--adamas-cyan] px-8 py-3 font-mono text-xs tracking-widest uppercase hover:bg-[--adamas-cyan] hover:text-black transition-colors">
+                    Access The Gateway
+                </button>
             </div>
-
-            <p class="text-sm text-gray-400">If you seek the comfort of a standard corporate hierarchy, this path is not for you. If you want to capture the perpetual yield of the assets you forge, operate under a noble, fact-based meritocracy, and engineer the future of industrial logistics, enter the Draft.</p>
         </div>
-    </main>
+    </section>
 
-    <!-- Terminal Section (The Gateway) -->
-    <section class="w-full bg-[#05070A] border-t border-[--gunmetal] py-16 px-6 mt-10">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="font-mono text-[--adamas-cyan] text-xl mb-6">>> DISCLOSURE & ENTRY PARAMETERS (THE GATEWAY)</h2>
-            <p class="font-mono text-xs text-gray-500 mb-8 max-w-2xl">Access to the terminal requires parsing the following structural physics. Ignorance of the protocol's mechanics is an automatic disqualification.</p>
+    <!-- ==============================================
+         SECCIÓN 2: VISION
+         ============================================== -->
+    <section id="vision" class="page-section">
+        <div class="max-w-5xl mx-auto px-6 py-12">
+            <h2 class="text-[--forge-copper] font-mono text-sm uppercase tracking-widest mb-2">Lex Mercatoria</h2>
+            <h1 class="text-5xl font-extrabold mb-12">REVERSING ENTROPY IN <br>INDUSTRIAL LOGISTICS.</h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 font-mono text-xs text-gray-400">
-                <div class="border border-gray-800 p-5 rounded-sm bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
-                    <span class="text-white font-bold block mb-2">I. FINANCIAL</span>
-                    Dual-token hydrostatic model. The $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. Extraction yield of a 33-hour sprint under a strict 33/66/1 routing ratio required.
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-[--adamas-cyan]">The Adamas Hash</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">El modelo industrial tradicional es entrópico por diseño: desperdicio, intermediarios y opacidad. Manoo instaura la "Lex Mercatoria" de la era descentralizada. A través del Adamas Hash, cristalizamos el esfuerzo humano y corporativo en valor digital inmutable.</p>
+                    <ul class="space-y-3 font-mono text-xs text-gray-300 border-l border-[--gunmetal] pl-4">
+                        <li>> Transparencia Termodinámica</li>
+                        <li>> Cero Muda (Zero Waste)</li>
+                        <li>> Propiedad Intelectual Cinética</li>
+                    </ul>
                 </div>
-                <div class="border border-gray-800 p-5 rounded-sm bg-black hover:border-[--forge-copper] transition-colors duration-300">
-                    <span class="text-white font-bold block mb-2">II. LEGAL</span>
-                    Class B shares represent economic rights based on absolute Class Asymmetry. Zero veto power. Drag-Along clause ensures frictionless exits. Breach of 8 KPIs triggers a Punitive Call Option.
-                </div>
-                <div class="border border-gray-800 p-5 rounded-sm bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
-                    <span class="text-white font-bold block mb-2">III. TECH</span>
-                    The Adamas Hash is blind without legal execution. IP transfer requires a Ricardian contract exchanging Fiat & Utility simultaneously.
-                    <code class="block mt-2 text-[#00E5FF] opacity-70 break-words">[Ricardian.Execute: if(Adamas_Validated) { route(33%, creator, $nM); ... }]</code>
+                <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative">
+                    <img src="crystal.jpg" class="corp-img" alt="Adamas Hash">
+                    <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--adamas-cyan]">Fig 1. Crystallization Process</div>
                 </div>
             </div>
 
-            <!-- Interactive Fake Terminal -->
-            <div class="w-full max-w-2xl mx-auto bg-black border border-[--gunmetal] rounded-md overflow-hidden glow-border shadow-2xl">
-                <div class="bg-[--gunmetal] px-4 py-2 flex items-center justify-between">
-                    <div class="flex space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="font-mono text-xs text-gray-400">manoo.io/draft_terminal</div>
+            <div class="grid md:grid-cols-2 gap-12 items-center flex-row-reverse">
+                <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative md:order-1">
+                    <img src="Siphon%20.jpg" class="corp-img" alt="Thermodynamic Siphon">
+                    <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--forge-copper]">Fig 2. The 33/66/1 Siphon</div>
                 </div>
-                <div class="p-6 font-mono text-sm">
-                    <p class="text-gray-500 mb-2">Initializing Octet Draft Sequence...</p>
-                    <p class="text-gray-500 mb-2">Loading physics engine... <span class="text-green-500">OK</span></p>
-                    <p class="text-gray-500 mb-4">Verifying Ricardian protocols... <span class="text-green-500">OK</span></p>
-                    <div class="text-[--adamas-cyan] mb-4 glow-text">
-                        Awaiting mathematical validation to unlock access.
+                <div class="md:order-2">
+                    <h3 class="text-2xl font-bold mb-4 text-[--forge-copper]">Thermodynamic Siphon</h3>
+                    <p class="text-gray-400 leading-relaxed">El flujo de capital obedece a leyes físicas. Nuestro sifón termodinámico distribuye la riqueza generada en una proporción estricta de 33/66/1. Extraemos el valor del caos y lo redirigimos hacia los creadores de utilidad, garantizando la presión operativa perpetua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         SECCIÓN 3: INVESTORS
+         ============================================== -->
+    <section id="investors" class="page-section">
+        <div class="max-w-5xl mx-auto px-6 py-12">
+            <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">Corporate Shield</h2>
+            <h1 class="text-5xl font-extrabold mb-12">SOVEREIGNTY & <br>CLASS ASYMMETRY.</h1>
+
+            <div class="glass-panel p-10 mb-12 border-l-4 border-[--forge-copper]">
+                <p class="text-xl text-gray-300 font-light italic leading-relaxed">
+                    "We build wealth, not mutinies. The architectural integrity of Betis S.R.L. relies on absolute asymmetry. Economic incentive without structural vulnerability."
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-8">
+                    <div class="p-6 border border-gray-800 bg-black">
+                        <h4 class="font-bold text-white mb-2 font-mono">1. The Yield (Class B)</h4>
+                        <p class="text-sm text-gray-400">Las acciones Clase B representan derechos económicos estrictos. Diseñadas para recompensar a los "Pilares" y operadores tácticos con una participación de hasta el 9.9% del pool, capturando el rendimiento (Yield) de la manufactura eficiente.</p>
                     </div>
-                    <div class="flex items-center text-white">
-                        <span class="mr-2 text-[--forge-copper]">root@manoo:~$</span> 
-                        <input type="text" placeholder="Prove your competency..." class="bg-transparent border-none outline-none text-white w-full font-mono placeholder-gray-700 focus:ring-0">
+                    <div class="p-6 border border-gray-800 bg-black">
+                        <h4 class="font-bold text-white mb-2 font-mono">2. The Control (Class A)</h4>
+                        <p class="text-sm text-gray-400">Cero poder de veto para operadores externos. Todo el control del Consejo (Board), control de la IP y decisiones estratégicas residen de manera absoluta en las Acciones Clase A (Soberanía del Fundador).</p>
+                    </div>
+                </div>
+                
+                <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 overflow-hidden bg-black">
+                    <!-- Efecto de fondo sutil -->
+                    <div class="absolute inset-0 opacity-20" style="background-image: url('Firefly_GeminiFlash_A%20high-end%20luxury%20brand%20identity.jpg'); background-size: cover; background-position: center;"></div>
+                    
+                    <div class="relative z-10 space-y-4 font-mono text-sm w-full">
+                        <div class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-500">Manoo Srl Valuation Model</span>
+                            <span class="text-[--adamas-cyan]">LOCKED</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-500">Drag-Along Clause</span>
+                            <span class="text-green-500">ACTIVE</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-500">Punitive Call Option</span>
+                            <span class="text-red-500">ON STANDBY</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-800 pb-2">
+                            <span class="text-gray-500">Vesting Period</span>
+                            <span class="text-[--forge-copper]">3 YEARS</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==============================================
+         SECCIÓN 4: CHRONOMETER (EXECUTE)
+         ============================================== -->
+    <section id="chronometer" class="page-section">
+        <div class="max-w-4xl mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-[80vh]">
+            
+            <h2 class="text-[--alabaster] font-mono text-lg uppercase tracking-widest mb-10 glow-cyan">Terminal Initialization</h2>
+
+            <!-- EL RELOJ MECÁNICO/DIGITAL -->
+            <div class="chronometer-container mb-12">
+                <div class="chrono-digital-ring"></div>
+                <div class="chrono-mechanical-ring"></div>
+                
+                <div class="chrono-core">
+                    <span class="font-mono text-[--forge-copper] text-xs uppercase tracking-widest mb-2">T-Minus to Execution</span>
+                    
+                    <!-- Displays del Cronómetro -->
+                    <div class="font-mono text-4xl md:text-5xl font-bold text-white tracking-wider flex items-center justify-center glow-cyan w-full">
+                        <div class="w-20 text-center" id="days">165</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                        <div class="w-16 text-center" id="hours">33</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                        <div class="w-16 text-center" id="minutes">00</div><span class="text-gray-600 text-2xl mx-1">:</span>
+                        <div class="w-16 text-center text-[--adamas-cyan]" id="seconds">00</div>
+                    </div>
+                    
+                    <div class="flex gap-4 font-mono text-[10px] text-gray-500 uppercase tracking-widest mt-2 w-full justify-center">
+                        <span class="w-20 text-center">Days</span>
+                        <span class="w-16 text-center">Hrs</span>
+                        <span class="w-16 text-center">Min</span>
+                        <span class="w-16 text-center">Sec</span>
+                    </div>
+
+                    <!-- Milisegundos Digitales Rápidos -->
+                    <div id="ms" class="font-mono text-[--adamas-cyan] text-sm mt-4 tracking-[0.3em] opacity-80">000</div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-lg bg-black border border-[--gunmetal] p-1 font-mono text-xs flex items-center justify-between">
+                <input type="text" placeholder="Enter Ricardian Passkey..." class="w-full bg-transparent text-white px-4 outline-none placeholder-gray-700">
+                <button class="bg-[--adamas-cyan] text-black font-bold px-6 py-3 uppercase hover:bg-white transition-colors">Execute</button>
+            </div>
+            
+            <p class="font-mono text-[10px] text-gray-600 uppercase tracking-widest mt-8">System locked pending temporal synchronization.</p>
+        </div>
+    </section>
+
+    <!-- MOTOR JAVASCRIPT: ROUTING Y CRONÓMETRO -->
+    <script>
+        // 1. NAVEGACIÓN SPA (Single Page Application Router)
+        function navigate(sectionId) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.page-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            // Mostrar la sección objetivo
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Actualizar el estado visual del menú de navegación
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-link');
+                if(link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active-link');
+                }
+            });
+
+            // Actualizar URL sin recargar
+            history.pushState(null, null, '#' + sectionId);
+            window.scrollTo(0,0);
+        }
+
+        // Leer el hash al cargar la página (por si alguien entra directo a manoo.io/#investors)
+        window.addEventListener('load', () => {
+            let hash = window.location.hash.substring(1);
+            if(hash && document.getElementById(hash)) {
+                navigate(hash);
+            }
+        });
+
+        // 2. CRONÓMETRO: FUSIÓN MECÁNICA / DIGITAL
+        // Establecer Fecha Objetivo (Ejemplo: 165 días desde la fecha actual)
+        // Usamos una fecha fija para que todos los usuarios vean la misma cuenta regresiva
+        const targetDate = new Date("2026-08-01T00:00:00Z").getTime();
+
+        const elDays = document.getElementById('days');
+        const elHours = document.getElementById('hours');
+        const elMinutes = document.getElementById('minutes');
+        const elSeconds = document.getElementById('seconds');
+        const elMs = document.getElementById('ms');
+
+        function updateChronometer() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                // Cuenta regresiva terminada
+                elDays.innerText = "000";
+                elHours.innerText = "00";
+                elMinutes.innerText = "00";
+                elSeconds.innerText = "00";
+                elMs.innerText = "000";
+                return;
+            }
+
+            // Cálculos matemáticos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const milliseconds = Math.floor((distance % 1000));
+
+            // Actualización del DOM (Añadiendo ceros a la izquierda)
+            elDays.innerText = days.toString().padStart(3, '0');
+            elHours.innerText = hours.toString().padStart(2, '0');
+            elMinutes.innerText = minutes.toString().padStart(2, '0');
+            elSeconds.innerText = seconds.toString().padStart(2, '0');
+            elMs.innerText = milliseconds.toString().padStart(3, '0');
+
+            // requestAnimationFrame asegura la fluidez absoluta digital (60fps)
+            requestAnimationFrame(updateChronometer);
+        }
+
+        // Iniciar la máquina
+        requestAnimationFrame(updateChronometer);
+    </script>
 </body>
 </html>
