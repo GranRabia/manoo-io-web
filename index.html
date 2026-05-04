@@ -79,8 +79,8 @@
             background: linear-gradient(to bottom, rgba(10,13,20,0.3), var(--deep-carbon));
             z-index: 1;
         }
-        .side-tech { background-image: url('download-2026-02-11T13_50_48.jpg'); border-right: 1px solid rgba(0,229,255,0.2); }
-        .side-physical { background-image: url('siphonaso%20(9-16).jpg'); }
+        .side-tech { background-image: url('MANOO_VAULT_FB.png'); border-right: 1px solid rgba(0,229,255,0.2); }
+        .side-physical { background-image: url('MANOO_ENGINE_PHASEI_II.jpg'); }
         .hero-content { position: relative; z-index: 2; max-width: 400px; }
 
         .corp-img { width: 100%; height: 300px; object-fit: cover; filter: brightness(0.8) contrast(1.2); transition: 0.5s; }
@@ -97,16 +97,6 @@
             box-shadow: 0 0 30px rgba(0, 229, 255, 0.3), inset 0 0 20px rgba(0, 229, 255, 0.1);
             animation: fluid-spin 8s linear infinite;
         }
-        .chrono-digital-ring::before {
-            content: ''; position: absolute; top: -5px; right: 50%;
-            width: 10px; height: 10px; background: var(--adamas-cyan);
-            border-radius: 50%; box-shadow: 0 0 15px var(--adamas-cyan);
-        }
-        .chrono-mechanical-ring {
-            position: absolute; width: 85%; height: 85%; border-radius: 50%;
-            border: 4px dashed var(--forge-copper); opacity: 0.8;
-            animation: mechanical-tick 60s steps(60) infinite; 
-        }
         .chrono-core {
             position: relative; z-index: 10; text-align: center;
             background: rgba(10, 13, 20, 0.9); border: 1px solid rgba(184, 115, 51, 0.3);
@@ -115,25 +105,16 @@
             box-shadow: inset 0 0 50px rgba(0,0,0,0.9);
         }
         @keyframes fluid-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @keyframes mechanical-tick { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         .bg-grid {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
         }
 
-        .modal-overlay {
-            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-        }
-        .modal-overlay.open {
-            opacity: 1; pointer-events: auto;
-        }
-        .modal-content {
-            transform: scale(0.95) translateY(20px); transition: all 0.3s ease;
-        }
-        .modal-overlay.open .modal-content {
-            transform: scale(1) translateY(0);
-        }
+        .modal-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-content { transform: scale(0.95) translateY(20px); transition: all 0.3s ease; }
+        .modal-overlay.open .modal-content { transform: scale(1) translateY(0); }
     </style>
 </head>
 <body class="bg-grid flex flex-col min-h-screen">
@@ -142,7 +123,7 @@
         <div class="flex items-center gap-4 cursor-pointer group" onclick="navigate('home')">
             <div class="w-9 h-9 rounded-sm border border-[--adamas-cyan] flex items-center justify-center bg-[#0A0D14] glow-border relative overflow-hidden transition-all duration-300 group-hover:border-white">
                 <div class="absolute inset-0 bg-[--adamas-cyan] opacity-0 group-hover:opacity-10 transition-opacity"></div>
-                <svg class="w-5 h-5 text-[--adamas-cyan] transition-colors duration-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-5 h-5 text-[--adamas-cyan] transition-colors duration-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
             </div>
@@ -160,18 +141,19 @@
     </header>
 
     <div class="flex-grow">
+        <!-- SECCIÓN 1: HOME -->
         <section id="home" class="page-section active">
             <div class="hero-split">
                 <div class="hero-side side-tech">
                     <div class="hero-content">
                         <p class="font-mono text-[--adamas-cyan] text-xs tracking-widest mb-4 uppercase glow-cyan">The Vault (Zoug)</p>
-                        <h2 class="text-4xl font-bold mb-4 tracking-tight">Immutable Code.<br>Swiss Sovereignty.</h2>
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight uppercase">Immutable Code.<br>Swiss Sovereignty.</h2>
                     </div>
                 </div>
                 <div class="hero-side side-physical">
                     <div class="hero-content">
                         <p class="font-mono text-[--forge-copper] text-xs tracking-widest mb-4 uppercase glow-copper">The Engine (Vaud)</p>
-                        <h2 class="text-4xl font-bold mb-4 tracking-tight">Kinetic IP.<br>Physical Execution.</h2>
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight uppercase">Kinetic IP.<br>Physical Execution.</h2>
                     </div>
                 </div>
             </div>
@@ -185,15 +167,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs text-gray-400">
                     <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
                         <span class="text-white font-bold block mb-3 text-sm">I. FINANCIAL</span>
-                        Dual-token hydrostatic model. The $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. 33/66/1 routing ratio required.
+                        Dual-token hydrostatic model. $M° (Reserve) and $nM° (Yield) maintain strict dynamic conversion. 33/66/1 routing.
                     </div>
                     <div class="glass-panel p-6 border-t-2 border-t-[--forge-copper]">
                         <span class="text-white font-bold block mb-3 text-sm">II. LEGAL</span>
-                        Sovereignty anchored in Manoovers Verein (Zug). Operational execution driven by Vaud protocol. Zero veto power.
+                        Sovereignty anchored in Manoovers Verein (Zug). Operational execution driven by Vaud protocol.
                     </div>
                     <div class="glass-panel p-6 border-t-2 border-t-[--adamas-cyan]">
                         <span class="text-white font-bold block mb-3 text-sm">III. TECH</span>
-                        The Adamas Hash is blind without legal execution. IP transfer requires Ricardian contracts exchanging Fiat & Utility simultaneously.
+                        The Adamas Hash anchors industrial artifacts. IP transfer requires Ricardian contracts.
                     </div>
                 </div>
                 <div class="mt-12 text-center">
@@ -204,6 +186,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN 2: VISION -->
         <section id="vision" class="page-section">
             <div class="max-w-5xl mx-auto px-6 py-12">
                 <h2 class="text-[--forge-copper] font-mono text-sm uppercase tracking-widest mb-2">Lex Mercatoria</h2>
@@ -212,7 +195,7 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
                     <div>
                         <h3 class="text-2xl font-bold mb-4 text-[--adamas-cyan]">The Adamas Hash</h3>
-                        <p class="text-gray-400 leading-relaxed mb-6">Manoovers establece la "Lex Mercatoria" de la era descentralizada. A través del Adamas Hash, cristalizamos el esfuerzo humano y corporativo en valor digital inmutable.</p>
+                        <p class="text-gray-400 leading-relaxed mb-6">Manoovers establece la "Lex Mercatoria" de la era descentralizada. Cristalizamos el esfuerzo humano y corporativo en valor digital inmutable.</p>
                         <ul class="space-y-3 font-mono text-xs text-gray-300 border-l border-[--gunmetal] pl-4">
                             <li>> Transparencia Termodinámica</li>
                             <li>> Cero Muda (Zero Waste)</li>
@@ -227,44 +210,39 @@
 
                 <div class="grid md:grid-cols-2 gap-12 items-center flex-row-reverse">
                     <div class="rounded-sm overflow-hidden border border-[--gunmetal] relative md:order-1">
-                        <img src="MANOO_BETIS_ID.png" class="corp-img" alt="Thermodynamic Siphon">
+                        <img src="MANOO_ENGINE_ARTIFACT_II_VII.png" class="corp-img" alt="Thermodynamic Siphon">
                         <div class="absolute bottom-0 w-full glass-panel p-2 font-mono text-[10px] text-center uppercase tracking-widest text-[--forge-copper]">Fig 2. The 33/66/1 Siphon (PDAFC Motor)</div>
                     </div>
                     <div class="md:order-2">
                         <h3 class="text-2xl font-bold mb-4 text-[--forge-copper]">Thermodynamic Siphon</h3>
-                        <p class="text-gray-400 leading-relaxed">El flujo de capital obedece a leyes físicas. Nuestro sifón termodinámico distribuye la riqueza generada en una proporción de 33/66/1, garantizando la presión operativa perpetua.</p>
+                        <p class="text-gray-400 leading-relaxed">Nuestro sifón termodinámico distribuye la riqueza generada en una proporción de 33/66/1, garantizando la presión operativa perpetua.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SECCIÓN 3: INVESTORS -->
         <section id="investors" class="page-section">
             <div class="max-w-6xl mx-auto px-6 py-12">
                 <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">Strategic Seed Round</h2>
                 <h1 class="text-4xl md:text-5xl font-extrabold mb-12 uppercase">Secure Your Asymmetry.<br>Before The Hard Peg.</h1>
 
-                <div class="glass-panel p-8 md:p-10 mb-12 border-l-4 border-[--adamas-cyan]">
-                    <p class="text-lg md:text-xl text-gray-300 font-light italic leading-relaxed">
-                        "Wealth is generated in the asymmetry of early access. The Manoo network enforces a strict 33-hour halving cycle leading up to the global D-33h deployment."
-                    </p>
-                </div>
-
                 <div class="grid md:grid-cols-2 gap-10">
                     <div class="space-y-6">
-                        <div class="p-6 border border-gray-800 bg-black hover:border-[--forge-copper] transition-colors duration-300">
+                        <div class="p-6 border border-gray-800 bg-black hover:border-[--forge-copper] transition-colors">
                             <h4 class="font-bold text-white mb-2 font-mono uppercase">01. Betis Exclusive Access</h4>
                             <p class="text-sm text-gray-400">Secure a foundational AI Node. 33% yield routing. <br><span class="text-[--forge-copper] font-bold mt-2 inline-block">Requirement: 3,300 nM°</span></p>
                         </div>
-                        <div class="p-6 border border-gray-800 bg-black hover:border-[--adamas-cyan] transition-colors duration-300">
+                        <div class="p-6 border border-gray-800 bg-black hover:border-[--adamas-cyan] transition-colors">
                             <h4 class="font-bold text-white mb-2 font-mono uppercase">02. 3.3 Min Execution Packages</h4>
-                            <p class="text-sm text-gray-400">Pre-purchase high-density algorithmic compute time. <br><span class="text-[--adamas-cyan] font-bold mt-2 inline-block">Requirement: 330 nM°</span></p>
+                            <p class="text-sm text-gray-400">Pre-purchase compute time. <br><span class="text-[--adamas-cyan] font-bold mt-2 inline-block">Requirement: 330 nM°</span></p>
                         </div>
                     </div>
                     
                     <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 bg-black rounded-sm glow-border">
                         <div class="relative z-10 space-y-6 font-mono w-full text-center">
                             <h3 class="text-[--adamas-cyan] font-bold text-xl tracking-widest glow-cyan">SEED ROUND ALLOCATION</h3>
-                            <div class="bg-[--gunmetal] bg-opacity-50 p-6 rounded border border-gray-700">
+                            <div class="bg-[--gunmetal] p-6 rounded border border-gray-700">
                                 <p class="text-gray-400 text-xs uppercase mb-2">Current Seed Rate</p>
                                 <div class="text-3xl md:text-4xl font-bold text-white mb-2">1 CHF = <span class="text-[--adamas-cyan] glow-cyan">6.60</span> nM°</div>
                                 <p class="text-[--forge-copper] text-xs">Target Launch Rate: 1 CHF = 3.30 nM°</p>
@@ -278,12 +256,12 @@
             </div>
         </section>
 
+        <!-- SECCIÓN 4: CHRONOMETER -->
         <section id="chronometer" class="page-section">
             <div class="max-w-4xl mx-auto px-6 py-20 flex flex-col items-center justify-center min-h-[80vh]">
                 <h2 class="text-[--alabaster] font-mono text-lg uppercase tracking-widest mb-10 glow-cyan uppercase">Terminal Initialization</h2>
                 <div class="chronometer-container mb-12">
                     <div class="chrono-digital-ring"></div>
-                    <div class="chrono-mechanical-ring"></div>
                     <div class="chrono-core">
                         <span class="font-mono text-[--forge-copper] text-xs uppercase tracking-widest mb-2">Global Launch Sequence</span>
                         <div class="font-mono text-4xl md:text-5xl font-bold text-white flex items-center glow-cyan">
@@ -292,10 +270,10 @@
                             <div class="w-16 text-center" id="minutes">22</div><span class="text-gray-600 mx-1">:</span>
                             <div class="w-16 text-center text-[--adamas-cyan]" id="seconds">00</div>
                         </div>
-                        <div id="ms" class="font-mono text-[--adamas-cyan] text-sm mt-4 tracking-[0.3em] opacity-80">000</div>
+                        <div id="ms" class="font-mono text-[--adamas-cyan] text-sm mt-4 opacity-80 tracking-widest">000</div>
                     </div>
                 </div>
-                <div class="w-full max-w-lg bg-black border border-[--gunmetal] p-1 font-mono text-xs flex items-center justify-between">
+                <div class="w-full max-w-lg bg-black border border-[--gunmetal] p-1 font-mono text-xs flex items-center">
                     <input type="text" placeholder="Enter Ricardian Passkey..." class="w-full bg-transparent text-white px-4 outline-none">
                     <button class="bg-[--adamas-cyan] text-black font-bold px-6 py-3 uppercase">Execute</button>
                 </div>
@@ -303,29 +281,11 @@
         </section>
     </div>
 
-    <div id="pitch-modal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-md">
-        <div class="modal-content glass-panel w-full max-w-lg mx-4 border-2 border-[--adamas-cyan] p-8 font-mono relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400">✕</button>
-            <h3 class="text-[--adamas-cyan] text-xl font-bold mb-1 uppercase glow-cyan">Access Data Room</h3>
-            <p class="text-xs text-gray-400 mb-6 uppercase">Manoovers Verein (Zug) Confidential Portal</p>
-            <form class="space-y-5" onsubmit="submitForm(event)">
-                <input type="text" required class="w-full bg-black border border-gray-700 p-3 text-white text-sm" placeholder="Entity identifier">
-                <input type="email" required class="w-full bg-black border border-gray-700 p-3 text-white text-sm" placeholder="Email Address">
-                <div class="flex items-start gap-3 border-l-2 border-[--forge-copper] pl-3 py-1">
-                    <input type="checkbox" required id="legal-check" class="mt-1">
-                    <label for="legal-check" class="text-[9px] text-gray-400 uppercase">
-                        <strong>Ricardian Acknowledgment:</strong> I accept the Swiss jurisdiction of Manoovers Verein (Zug).
-                    </label>
-                </div>
-                <button type="submit" id="submit-btn" class="w-full bg-[--adamas-cyan] text-black font-bold uppercase py-4">Transmit Request</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- FOOTER -->
     <footer class="w-full bg-[#05070A] border-t border-[--gunmetal] py-10 px-6 mt-16 z-10 relative font-mono text-[10px] text-gray-500 text-center uppercase">
         <div class="max-w-6xl mx-auto space-y-4">
             <h4 class="text-[--forge-copper] tracking-widest mb-6">Legal Disclaimer & Regulatory Disclosure</h4>
-            <p>RICARDIAN HASH: 0xLAUSANNE_MAIN_STABILIZATION_V1.5.8_2026 | © 2026 MANOO.IO</p>
+            <p>RICARDIAN HASH: 0xLAUSANNE_MAIN_STABILIZATION_V1.6.0_2026 | © 2026 MANOO.IO</p>
         </div>
     </footer>
 
@@ -339,10 +299,6 @@
             });
             window.scrollTo(0,0);
         }
-        const modal = document.getElementById('pitch-modal');
-        function openModal() { modal.classList.add('open'); }
-        function closeModal() { modal.classList.remove('open'); }
-
         function updateTimers() {
             const now = new Date().getTime();
             const distance = (new Date().getTime() + 12369600000) - now;
