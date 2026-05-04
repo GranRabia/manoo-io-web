@@ -26,7 +26,6 @@
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         
         .glow-cyan { text-shadow: 0 0 15px rgba(0, 229, 255, 0.6); }
-        .glow-copper { text-shadow: 0 0 15px rgba(184, 115, 51, 0.6); }
         .glow-border { box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); }
         .glass-panel {
             background: rgba(10, 13, 20, 0.7);
@@ -63,9 +62,7 @@
             background-color: var(--adamas-cyan);
             transition: width 0.3s ease;
         }
-        .nav-link:hover::after, .nav-link.active-link::after {
-            width: 100%;
-        }
+        .nav-link:hover::after, .nav-link.active-link::after { width: 100%; }
 
         .hero-split { height: calc(100vh - 80px); display: flex; position: relative; }
         .hero-side {
@@ -110,11 +107,6 @@
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
         }
-
-        .modal-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-        .modal-overlay.open { opacity: 1; pointer-events: auto; }
-        .modal-content { transform: scale(0.95) translateY(20px); transition: all 0.3s ease; }
-        .modal-overlay.open .modal-content { transform: scale(1) translateY(0); }
     </style>
 </head>
 <body class="bg-grid flex flex-col min-h-screen">
@@ -152,7 +144,7 @@
                 </div>
                 <div class="hero-side side-physical">
                     <div class="hero-content">
-                        <p class="font-mono text-[--forge-copper] text-xs tracking-widest mb-4 uppercase glow-copper">The Engine (Vaud)</p>
+                        <p class="font-mono text-[--forge-copper] text-xs tracking-widest mb-4 uppercase">The Engine (Vaud)</p>
                         <h2 class="text-4xl font-bold mb-4 tracking-tight uppercase">Kinetic IP.<br>Physical Execution.</h2>
                     </div>
                 </div>
@@ -223,34 +215,20 @@
 
         <!-- SECCIÓN 3: INVESTORS -->
         <section id="investors" class="page-section">
-            <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="max-w-6xl mx-auto px-6 py-12 text-center">
                 <h2 class="text-[--adamas-cyan] font-mono text-sm uppercase tracking-widest mb-2">Strategic Seed Round</h2>
                 <h1 class="text-4xl md:text-5xl font-extrabold mb-12 uppercase">Secure Your Asymmetry.<br>Before The Hard Peg.</h1>
-
-                <div class="grid md:grid-cols-2 gap-10">
-                    <div class="space-y-6">
-                        <div class="p-6 border border-gray-800 bg-black hover:border-[--forge-copper] transition-colors">
-                            <h4 class="font-bold text-white mb-2 font-mono uppercase">01. Betis Exclusive Access</h4>
-                            <p class="text-sm text-gray-400">Secure a foundational AI Node. 33% yield routing. <br><span class="text-[--forge-copper] font-bold mt-2 inline-block">Requirement: 3,300 nM°</span></p>
+                <div class="relative flex items-center justify-center border border-[--gunmetal] p-12 bg-black rounded-sm glow-border max-w-2xl mx-auto">
+                    <div class="relative z-10 space-y-6 font-mono w-full">
+                        <h3 class="text-[--adamas-cyan] font-bold text-xl tracking-widest glow-cyan">SEED ROUND ALLOCATION</h3>
+                        <div class="bg-[--gunmetal] p-6 rounded border border-gray-700">
+                            <p class="text-gray-400 text-xs uppercase mb-2">Current Seed Rate</p>
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2">1 CHF = <span class="text-[--adamas-cyan] glow-cyan">6.60</span> nM°</div>
+                            <p class="text-[--forge-copper] text-xs">Target Launch Rate: 1 CHF = 3.30 nM°</p>
                         </div>
-                        <div class="p-6 border border-gray-800 bg-black hover:border-[--adamas-cyan] transition-colors">
-                            <h4 class="font-bold text-white mb-2 font-mono uppercase">02. 3.3 Min Execution Packages</h4>
-                            <p class="text-sm text-gray-400">Pre-purchase compute time. <br><span class="text-[--adamas-cyan] font-bold mt-2 inline-block">Requirement: 330 nM°</span></p>
-                        </div>
-                    </div>
-                    
-                    <div class="relative flex items-center justify-center border border-[--gunmetal] p-8 bg-black rounded-sm glow-border">
-                        <div class="relative z-10 space-y-6 font-mono w-full text-center">
-                            <h3 class="text-[--adamas-cyan] font-bold text-xl tracking-widest glow-cyan">SEED ROUND ALLOCATION</h3>
-                            <div class="bg-[--gunmetal] p-6 rounded border border-gray-700">
-                                <p class="text-gray-400 text-xs uppercase mb-2">Current Seed Rate</p>
-                                <div class="text-3xl md:text-4xl font-bold text-white mb-2">1 CHF = <span class="text-[--adamas-cyan] glow-cyan">6.60</span> nM°</div>
-                                <p class="text-[--forge-copper] text-xs">Target Launch Rate: 1 CHF = 3.30 nM°</p>
-                            </div>
-                            <button onclick="openModal()" class="w-full bg-[--adamas-cyan] text-black px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all glow-cyan">
-                                Secure Allocation Now
-                            </button>
-                        </div>
+                        <button class="w-full bg-[--adamas-cyan] text-black px-6 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all glow-cyan">
+                            Secure Allocation Now
+                        </button>
                     </div>
                 </div>
             </div>
@@ -273,19 +251,14 @@
                         <div id="ms" class="font-mono text-[--adamas-cyan] text-sm mt-4 opacity-80 tracking-widest">000</div>
                     </div>
                 </div>
-                <div class="w-full max-w-lg bg-black border border-[--gunmetal] p-1 font-mono text-xs flex items-center">
-                    <input type="text" placeholder="Enter Ricardian Passkey..." class="w-full bg-transparent text-white px-4 outline-none">
-                    <button class="bg-[--adamas-cyan] text-black font-bold px-6 py-3 uppercase">Execute</button>
-                </div>
             </div>
         </section>
     </div>
 
-    <!-- FOOTER -->
     <footer class="w-full bg-[#05070A] border-t border-[--gunmetal] py-10 px-6 mt-16 z-10 relative font-mono text-[10px] text-gray-500 text-center uppercase">
         <div class="max-w-6xl mx-auto space-y-4">
             <h4 class="text-[--forge-copper] tracking-widest mb-6">Legal Disclaimer & Regulatory Disclosure</h4>
-            <p>RICARDIAN HASH: 0xLAUSANNE_MAIN_STABILIZATION_V1.6.0_2026 | © 2026 MANOO.IO</p>
+            <p>RICARDIAN HASH: 0xLAUSANNE_LEX_MERCATORIA_V1.6.1_2026 | © 2026 MANOO.IO</p>
         </div>
     </footer>
 
